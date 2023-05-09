@@ -1,0 +1,18 @@
+<mat-card *ngFor="let doctor of doctors">
+  <div flexLayout="row" class="box">
+    <div flexLayout="column" fxFlex>
+        <mat-card-title>{{doctor.name}}</mat-card-title>
+        <mat-card-subtitle>{{doctor.specialization}}</mat-card-subtitle>
+        <div flexLayout="row">
+          <img src="../../../assets/doctor.jpeg" alt="" mat-card-lg-image class="doctorImg">
+          <mat-card-content fxFlex>{{doctor.description}}</mat-card-content>
+        </div>
+    </div>
+    <div>
+      <div class="price">{{doctor.price}} PLN</div>
+    </div>
+  </div>
+  <mat-card-actions align="end">
+    <button mat-flat-button class="button-7" role="button">View</button>
+  </mat-card-actions>
+</mat-card>
