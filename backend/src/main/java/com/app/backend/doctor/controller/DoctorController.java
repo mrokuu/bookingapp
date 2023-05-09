@@ -14,6 +14,8 @@ import java.util.List;
 public class DoctorController {
 
     private final DoctorService doctorService;
+
+    
     @GetMapping("/doctors")
     public List<Doctor> getDoctors(){
         return doctorService.getDoctor();
