@@ -9,6 +9,7 @@ import { MaterialModule } from './material.module';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -27,6 +28,7 @@ import {MatTableModule} from '@angular/material/table';
     MatCardModule,
     MatPaginatorModule,
     MatTableModule,
+    MatIconModule
   ],
   exports:[
     FooterComponent,
@@ -34,7 +36,8 @@ import {MatTableModule} from '@angular/material/table';
     SidebarComponent,
     MatCardModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule
   ]
 })
 export class ComponentsModule { }

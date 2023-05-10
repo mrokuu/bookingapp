@@ -1,0 +1,27 @@
+<form fxLayout="column" [formGroup]="doctorForm" (submit)="submit()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Enter Name" formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput rows="20" placeholder="Enter Description" formControlName="description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Specialization</mat-label>
+    <input matInput placeholder="Enter Specialization" formControlName="specialization">
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Price</mat-label>
+    <input matInput placeholder="Enter Price" formControlName="price">
+  </mat-form-field>
+
+  <div>
+    <button mat-flat-button color="primary">Save</button>
+  </div>
+</form>
+

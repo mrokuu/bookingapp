@@ -14,7 +14,7 @@ export class AdminDoctorComponent implements AfterViewInit{
   dataSource: AdminDoctor[] = []
   totalElements :number = 0;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  displayedColumns: string[]= ["id", "name", "price"]
+  displayedColumns: string[]= ["id", "name", "price", "actions"]
 
   constructor(private adminDoctorService : AdminDoctorService){}
 

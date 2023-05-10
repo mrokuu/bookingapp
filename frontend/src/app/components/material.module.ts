@@ -5,6 +5,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -17,14 +19,18 @@ import {MatPaginator} from '@angular/material/paginator';
     MatButtonModule,
     MatListModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatIconModule,
+    MatInputModule
 
   ],
   exports:[
     MatButtonModule,
     MatListModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatIconModule,
+    MatInputModule
   ]
 })
 export class MaterialModule { }

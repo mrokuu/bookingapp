@@ -1,5 +1,7 @@
 package com.app.backend.admin.service;
 
+import com.app.backend.admin.dto.AdminDoctorDto;
+import com.app.backend.admin.mapper.AdminMapper;
 import com.app.backend.admin.model.AdminDoctor;
 import com.app.backend.admin.repository.AdminDoctorRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,4 +19,27 @@ public class AdminDoctorService {
 
         return adminDoctorRepository.findAll(pageable);
     }
+
+    public AdminDoctor getDoctor(Long id) {
+        return adminDoctorRepository.findById(id).orElseThrow();
+    }
+
+
+//    public AdminDoctor createDoctor(AdminDoctor doctor) {
+//        return adminDoctorRepository.save(doctor);
+//    }
+public void createDoctor(AdminDoctorDto adminDoctorDto) {
+        AdminDoctor adminDoctor = AdminMapper.mapAdminDoctor(adminDoctorDto);
+        adminDoctorRepository.save(adminDoctor);
+}
+
+//    public AdminDoctor updateeDoctor(AdminDoctor doctor) {
+//        return adminDoctorRepository.save(doctor);
+//    }
+
+    public AdminDoctor updateeDoctor(AdminDoctorDto adminDoctorDto) {
+        AdminDoctor adminDoctor = AdminMapper.mapAdminDoctor(adminDoctorDto);
+        return adminDoctorRepository.save(adminDoctor);
+    }
+
 }

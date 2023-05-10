@@ -8,6 +8,7 @@ import { LoginComponent } from './module/login/login.component';
 import { FullpageadminComponent } from './layouts/fullpageadmin/fullpageadmin.component';
 import { AdminComponent } from './module/admin/admin.component';
 import { AdminDoctorComponent } from './module/admin/admin-doctor/admin-doctor.component';
+import { AdminDoctorUpdateComponent } from './module/admin/admin-doctor-update/admin-doctor-update.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
     {
       path:'admin/doctors',
       component:AdminDoctorComponent
+    },
+    {
+      path:'admin/doctors/update/:id',
+      component:AdminDoctorUpdateComponent
     }
   ]
   }

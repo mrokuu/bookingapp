@@ -1,6 +1,6 @@
 export interface Doctor{
           name: string,
-          specialization : string,
           description: string,
+          specialization : string,
           price: number
 }

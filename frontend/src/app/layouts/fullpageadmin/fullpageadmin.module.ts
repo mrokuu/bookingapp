@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from 'src/app/components/material.module';
 import { AdminDoctorComponent } from 'src/app/module/admin/admin-doctor/admin-doctor.component';
+import { AdminDoctorUpdateComponent } from 'src/app/module/admin/admin-doctor-update/admin-doctor-update.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,13 +15,15 @@ import { AdminDoctorComponent } from 'src/app/module/admin/admin-doctor/admin-do
   declarations: [
     FullpageadminComponent,
     AdminComponent,
-    AdminDoctorComponent
+    AdminDoctorComponent,
+    AdminDoctorUpdateComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class FullpageadminModule { }
