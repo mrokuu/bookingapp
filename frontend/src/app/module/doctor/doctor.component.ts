@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { DoctorService } from './doctor.service';
 import { Doctor } from './model/doctor';
+import { Page } from 'src/app/components/model/page';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-doctor',
@@ -8,7 +10,10 @@ import { Doctor } from './model/doctor';
   styleUrls: ['./doctor.component.scss']
 })
 export class DoctorComponent {
-  doctors: Doctor[] = [];
+  // doctors: Doctor[] = [];
+  // totalElemetns: number = 0;
+  page! : Page<Doctor>;
+
 
   constructor(private doctorService : DoctorService){}
 
@@ -17,7 +22,19 @@ export class DoctorComponent {
   }
 
   getProducts(){
-    this.doctorService.getDoctors()
-    .subscribe(doctors => this.doctors = doctors);
+   this.getDoctorPage(0,10);
   }
+
+  onPageEvent(event : PageEvent){
+    this.getDoctorPage(event.pageIndex, event.pageSize);
+  }
+
+
+  private getDoctorPage(page:number, size: number){
+    this.doctorService.getDoctors(page, size)
+    .subscribe(page => this.page = page);
+  }
+
+
+
 }

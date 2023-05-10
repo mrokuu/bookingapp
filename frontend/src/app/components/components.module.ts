@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FlexModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -22,13 +22,15 @@ import {MatCardModule} from '@angular/material/card';
     RouterModule,
     FlexModule,
     MaterialModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule
   ],
   exports:[
     FooterComponent,
     HeaderComponent,
     SidebarComponent,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule
   ]
 })
 export class ComponentsModule { }
