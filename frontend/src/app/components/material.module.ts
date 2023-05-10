@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+
 
 
 
@@ -12,11 +15,16 @@ import {MatPaginatorModule} from '@angular/material/paginator';
   imports: [
     CommonModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule
+
   ],
   exports:[
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class MaterialModule { }

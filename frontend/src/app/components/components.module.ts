@@ -8,6 +8,8 @@ import { FlexModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+
 
 
 
@@ -23,14 +25,16 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     FlexModule,
     MaterialModule,
     MatCardModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTableModule,
   ],
   exports:[
     FooterComponent,
     HeaderComponent,
     SidebarComponent,
     MatCardModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTableModule
   ]
 })
 export class ComponentsModule { }

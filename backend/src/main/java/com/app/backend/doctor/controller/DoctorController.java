@@ -20,6 +20,7 @@ public class DoctorController {
 
     @GetMapping("/doctors")
     public Page<Doctor> getDoctors(Pageable pageable){
+
         return doctorService.getDoctor(pageable);
     }
 }

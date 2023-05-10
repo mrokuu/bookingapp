@@ -7,6 +7,7 @@ import { FullpageComponent } from './layouts/fullpage/fullpage.component';
 import { LoginComponent } from './module/login/login.component';
 import { FullpageadminComponent } from './layouts/fullpageadmin/fullpageadmin.component';
 import { AdminComponent } from './module/admin/admin.component';
+import { AdminDoctorComponent } from './module/admin/admin-doctor/admin-doctor.component';
 
 const routes: Routes = [
   {
@@ -37,7 +38,12 @@ const routes: Routes = [
     {
       path:'admin',
       component:AdminComponent
-    }]
+    },
+    {
+      path:'admin/doctors',
+      component:AdminDoctorComponent
+    }
+  ]
   }
 ];
 

@@ -5,13 +5,15 @@ import { AdminComponent } from 'src/app/module/admin/admin.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from 'src/app/components/material.module';
+import { AdminDoctorComponent } from 'src/app/module/admin/admin-doctor/admin-doctor.component';
 
 
 
 @NgModule({
   declarations: [
     FullpageadminComponent,
-    AdminComponent
+    AdminComponent,
+    AdminDoctorComponent
   ],
   imports: [
     CommonModule,
