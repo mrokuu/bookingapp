@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FullpageadminComponent } from './fullpageadmin.component';
-import { AdminComponent } from 'src/app/module/admin/admin.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from 'src/app/components/material.module';
-import { AdminDoctorComponent } from 'src/app/module/admin/admin-doctor/admin-doctor.component';
-import { AdminDoctorUpdateComponent } from 'src/app/module/admin/admin-doctor-update/admin-doctor-update.component';
+import { FullpageadminComponent } from './fullpageadmin.component';
+import { AdminComponent } from 'src/app/modules/admin/admin.component';
+import {MatListModule} from '@angular/material/list';
+import { AdminDoctorComponent } from 'src/app/modules/admin/admin-doctor/admin-doctor.component';
+import { MaterialModule } from 'src/app/shared/material.module';
+import { AdminDoctorUpdateComponent } from 'src/app/modules/admin/admin-doctor-update/admin-doctor-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -22,8 +24,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     FlexLayoutModule,
+    MatListModule,
     MaterialModule,
     ReactiveFormsModule
+
   ]
 })
 export class FullpageadminModule { }

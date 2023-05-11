@@ -4,10 +4,13 @@ import com.app.backend.admin.dto.AdminDoctorDto;
 import com.app.backend.admin.mapper.AdminMapper;
 import com.app.backend.admin.model.AdminDoctor;
 import com.app.backend.admin.repository.AdminDoctorRepository;
+import com.app.backend.doctor.model.Doctor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -37,8 +40,8 @@ public void createDoctor(AdminDoctorDto adminDoctorDto) {
 //        return adminDoctorRepository.save(doctor);
 //    }
 
-    public AdminDoctor updateeDoctor(AdminDoctorDto adminDoctorDto) {
-        AdminDoctor adminDoctor = AdminMapper.mapAdminDoctor(adminDoctorDto);
+    public AdminDoctor updateeDoctor(AdminDoctorDto adminDoctorDto, Long id) {
+        AdminDoctor adminDoctor = AdminMapper.mapAdminDoctorWithId(adminDoctorDto, id);
         return adminDoctorRepository.save(adminDoctor);
     }
 

@@ -23,4 +23,5 @@ public class DoctorController {
 
         return doctorService.getDoctor(pageable);
     }
+
 }

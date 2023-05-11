@@ -1,6 +1,9 @@
 <app-header flexLayout="column"></app-header>
-<div flexLayout="column" fxFlex>
-    <div class="content" fxFlex>
+<div flexLayout="row" fxFlex>
+    <div fxFlex="20">
+        <app-sidebar fxFlex></app-sidebar>
+    </div>
+    <div fxFlex="80" class="content">
         <router-outlet></router-outlet>
     </div>
 </div>

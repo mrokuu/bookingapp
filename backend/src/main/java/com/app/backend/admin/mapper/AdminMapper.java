@@ -18,4 +18,14 @@ public class AdminMapper {
                 .price(adminDoctorDto.getPrice())
                 .build();
     }
+
+    public static AdminDoctor mapAdminDoctorWithId(AdminDoctorDto adminDoctorDto, Long id){
+        return AdminDoctor.builder()
+                .id(id)
+                .name(adminDoctorDto.getName())
+                .specialization(adminDoctorDto.getSpecialization())
+                .description(adminDoctorDto.getDescription())
+                .price(adminDoctorDto.getPrice())
+                .build();
+    }
 }
