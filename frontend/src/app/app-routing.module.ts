@@ -9,6 +9,7 @@ import { FullpageadminComponent } from './layouts/fullpageadmin/fullpageadmin.co
 import { AdminComponent } from './modules/admin/admin.component';
 import { AdminDoctorComponent } from './modules/admin/admin-doctor/admin-doctor.component';
 import { AdminDoctorUpdateComponent } from './modules/admin/admin-doctor-update/admin-doctor-update.component';
+import { AdminDoctorAddComponent } from './modules/admin/admin-doctor-add/admin-doctor-add.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
     path:'', component: FullpageadminComponent, children: [
       {path: 'admin', component: AdminComponent},
       {path: 'admin/doctors', component: AdminDoctorComponent},
-      {path: 'admin/doctors/update/:id', component: AdminDoctorUpdateComponent}
+      {path: 'admin/doctors/update/:id', component: AdminDoctorUpdateComponent},
+      {path: 'admin/doctors/add', component: AdminDoctorAddComponent}
     ]
   }
 ];

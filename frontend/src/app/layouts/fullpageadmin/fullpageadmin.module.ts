@@ -9,6 +9,8 @@ import { AdminDoctorComponent } from 'src/app/modules/admin/admin-doctor/admin-d
 import { MaterialModule } from 'src/app/shared/material.module';
 import { AdminDoctorUpdateComponent } from 'src/app/modules/admin/admin-doctor-update/admin-doctor-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminDoctorAddComponent } from 'src/app/modules/admin/admin-doctor-add/admin-doctor-add.component';
+import { AdminProductFormConponent } from 'src/app/modules/admin/admin-doctor-form/admin-doctor-form.component';
 
 
 
@@ -18,7 +20,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     FullpageadminComponent,
     AdminComponent,
     AdminDoctorComponent,
-    AdminDoctorUpdateComponent
+    AdminDoctorUpdateComponent,
+    AdminDoctorAddComponent,
+    AdminProductFormConponent
   ],
   imports: [
     CommonModule,

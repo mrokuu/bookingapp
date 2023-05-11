@@ -9,6 +9,7 @@ import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.modul
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminDoctorUpdateComponent } from './modules/admin/admin-doctor-update/admin-doctor-update.component';
+import { AdminDoctorAddComponent } from './modules/admin/admin-doctor-add/admin-doctor-add.component';
 
 
 

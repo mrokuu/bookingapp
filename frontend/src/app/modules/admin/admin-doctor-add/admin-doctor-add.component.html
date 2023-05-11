@@ -1,0 +1,27 @@
+<h1>Add Doctor</h1>
+<form fxLayout="column" [formGroup] = "doctorForm" (submit)="submit()">
+  <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Enter name" formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput rows="20" placeholder="Enter description" formControlName="description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+      <mat-label>Specialization</mat-label>
+      <input matInput placeholder="Enter specializaiont" formControlName="specialization">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput placeholder="Enter price" formControlName="price">
+  </mat-form-field>
+
+
+  <div fxLayout="colum" fxFlexAlign="end" fxLayoutGap="10">
+      <button mat-flat-button color="primary">Zapisz</button>
+  </div>
+</form>
