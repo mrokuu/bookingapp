@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { AdminDoctorUpdate } from '../admin-doctor-update/model/adminDoctorUpdate';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AdminDoctorUpdateService } from '../admin-doctor-update/admin-doctor-update.service';
 import { AdminDoctorAddService } from './admin-doctor-add.service';
+import { AdminMessageComponent } from '../admin-message/admin-message.component';
+import { AdminMessageService } from '../admin-message.service';
 
 @Component({
   selector: 'app-admin-doctor-add',
@@ -20,16 +22,17 @@ export class AdminDoctorAddComponent {
   constructor(
     private router : Router,
     private adminDoctorAddService : AdminDoctorAddService,
-    private formBuilder : FormBuilder
+    private formBuilder : FormBuilder,
+    private adminMessageService : AdminMessageService
     ){}
 
   ngOnInit() : void{
 
     this.doctorForm = this.formBuilder.group({
-      name: [''],
-      description: [''],
-      specialization: [''],
-      price: ['']
+      name: ['', [Validators.required, Validators.minLength(4)]],
+      description: ['', [Validators.required, Validators.minLength(4)]],
+      specialization: ['', [Validators.required, Validators.minLength(4)]],
+      price: ['', [Validators.required, Validators.min(0)]]
     })
   }
 
@@ -38,7 +41,12 @@ export class AdminDoctorAddComponent {
 
   submit() {
     this.adminDoctorAddService.saveNewDoctor(this.doctorForm.value)
-      .subscribe(doctor => this.router.navigate(["admin/doctors"]))
+      .subscribe({
+        next: doctor => this.router.navigate(["admin/doctors"]),
+        error:err => this.adminMessageService.addSpringErrors(err.error)
+
+
+    })
   }
 
 }

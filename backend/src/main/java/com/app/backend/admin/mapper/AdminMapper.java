@@ -26,6 +26,7 @@ public class AdminMapper {
                 .specialization(adminDoctorDto.getSpecialization())
                 .description(adminDoctorDto.getDescription())
                 .price(adminDoctorDto.getPrice())
+                .image((adminDoctorDto.getImage()))
                 .build();
     }
 }

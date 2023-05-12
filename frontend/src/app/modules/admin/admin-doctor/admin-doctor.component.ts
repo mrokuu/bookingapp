@@ -4,6 +4,7 @@ import { MatTable } from '@angular/material/table';
 import { AdminDoctor } from './model/adminDoctor';
 import { AdminDoctorService } from './admin-doctor.service';
 import { startWith, switchMap } from 'rxjs';
+import { AdminConfirmationService } from '../admin-confirmation.service';
 
 @Component({
   selector: 'app-admin-doctor',
@@ -21,6 +22,7 @@ export class AdminDoctorComponent implements AfterViewInit {
 
   constructor(
     private adminDoctorService: AdminDoctorService,
+    private adminConfirmationService : AdminConfirmationService
     ) { }
 
 
@@ -34,6 +36,25 @@ export class AdminDoctorComponent implements AfterViewInit {
     ).subscribe(data => {
       this.totalElements = data.totalElements;
       this.data = data.content;
+    });
+  }
+
+
+  confirmDelete(element: AdminDoctor){
+    this.adminConfirmationService.openConfirmDialog("Are you sure you want to delete?")
+    .afterClosed()
+    .subscribe(result => {
+      if(result) {
+        this.adminDoctorService.delete(element.id)
+          .subscribe(() => {
+            this.data.forEach((value, index) => {
+              if(element == value) {
+                this.data.splice(index, 1);
+                this.table.renderRows();
+              }
+            })
+          });
+      }
     });
   }
 

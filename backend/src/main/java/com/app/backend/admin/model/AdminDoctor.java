@@ -21,4 +21,5 @@ public class AdminDoctor {
     private String specialization;
     private String description;
     private BigDecimal price;
+    private String image;
 }

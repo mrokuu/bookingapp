@@ -11,6 +11,8 @@ import { AdminDoctorUpdateComponent } from 'src/app/modules/admin/admin-doctor-u
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminDoctorAddComponent } from 'src/app/modules/admin/admin-doctor-add/admin-doctor-add.component';
 import { AdminProductFormConponent } from 'src/app/modules/admin/admin-doctor-form/admin-doctor-form.component';
+import { AdminMessageComponent } from 'src/app/modules/admin/admin-message/admin-message.component';
+import { AdminConfirmationComponent } from 'src/app/modules/admin/admin-confirmation/admin-confirmation.component';
 
 
 
@@ -22,7 +24,9 @@ import { AdminProductFormConponent } from 'src/app/modules/admin/admin-doctor-fo
     AdminDoctorComponent,
     AdminDoctorUpdateComponent,
     AdminDoctorAddComponent,
-    AdminProductFormConponent
+    AdminProductFormConponent,
+    AdminMessageComponent,
+    AdminConfirmationComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,43 @@
+import { Component } from '@angular/core';
+import { AdminMessageService } from '../admin-message.service';
+
+@Component({
+  selector: 'app-admin-message',
+  templateUrl: './admin-message.component.html',
+  styleUrls: ['./admin-message.component.scss']
+})
+export class AdminMessageComponent {
+
+  messages: Array<string> = [];
+  private clickCounter: number = 0;
+
+  constructor(private adminMessageService: AdminMessageService) { }
+
+  ngOnInit(): void {
+    this.adminMessageService.subject.subscribe(messages => {
+      this.messages = messages;
+      this.timeoutColseMassages();
+    });
+  }
+
+
+  clearMessages() {
+    this.messages = [];
+    this.adminMessageService.clear();
+  }
+
+  ngOnDestroy(): void {
+    this.adminMessageService.subject.unsubscribe();
+  }
+
+  private timeoutColseMassages() {
+    this.clickCounter++;
+    setTimeout(() => {
+      if (this.clickCounter == 1) {
+        this.clearMessages();
+      }
+      this.clickCounter--;
+    }, 4000);
+  }
+
+}

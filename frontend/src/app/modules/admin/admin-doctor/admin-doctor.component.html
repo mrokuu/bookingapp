@@ -1,4 +1,4 @@
-<h1>Lista produktów <button mat-raised-button color="accent" routerLink="/admin/doctors/add">Dodaj product <mat-icon>add</mat-icon></button></h1>
+<h1>Lista produktów <button mat-raised-button color="primary" routerLink="/admin/doctors/add">Dodaj product <mat-icon>add</mat-icon></button></h1>
 
 <table mat-table [dataSource]="data" class="mat-elevation-z8">
     <ng-container matColumnDef="image">
@@ -29,7 +29,7 @@
             <button mat-icon-button [routerLink]="['/admin/doctors/update', element.id]">
                 <mat-icon color="primary">edit</mat-icon>
             </button>
-            <button mat-icon-button>
+            <button mat-icon-button (click)="confirmDelete(element)">
                 <mat-icon color="warn">delete</mat-icon>
             </button>
         </td>

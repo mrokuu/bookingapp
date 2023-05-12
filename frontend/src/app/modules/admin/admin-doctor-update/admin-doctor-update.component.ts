@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AdminDoctorUpdateService } from './admin-doctor-update.service';
 import { AdminDoctorUpdate } from './model/adminDoctorUpdate';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-doctor-update',
@@ -13,8 +13,10 @@ export class AdminDoctorUpdateComponent {
 
 
   doctor!: AdminDoctorUpdate
-
   doctorForm!: FormGroup
+  requiredFileTypes = "image/jpeg, image/png";
+  imageForm!: FormGroup;
+  image: string | null = null;
 
   constructor(
     private router : ActivatedRoute,
@@ -25,10 +27,10 @@ export class AdminDoctorUpdateComponent {
   ngOnInit() : void{
     this.getDoctor()
     this.doctorForm = this.formBuilder.group({
-      name: [''],
-      description: [''],
-      specialization: [''],
-      price: ['']
+      name: ['', [Validators.required, Validators.minLength(4)]],
+      description: ['', [Validators.required, Validators.minLength(4)]],
+      specialization: ['', [Validators.required, Validators.minLength(4)]],
+      price: ['', [Validators.required, Validators.min(0)]]
     })
   }
 
@@ -56,6 +58,23 @@ export class AdminDoctorUpdateComponent {
       specialization: doctor.specialization,
       price: doctor.price
     }))
+  }
+
+
+
+  uploadFile(){
+    let formData = new FormData();
+    formData.append('file', this.imageForm.get('file')?.value);
+    this.adminDoctorUpdateService.uploadImage(formData)
+      .subscribe(result => this.image = result.filename);
+  }
+
+  onFileChange(event: any){
+    if(event.target.files.length > 0){
+      this.imageForm.patchValue({
+        file: event.target.files[0]
+      });
+    }
   }
 
 }
