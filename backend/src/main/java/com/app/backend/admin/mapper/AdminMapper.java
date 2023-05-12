@@ -32,11 +32,7 @@ public class AdminMapper {
                 .build();
     }
 
-//    private static String slugifydetails(String slug) {
-//        Slugify slugify = new Slugify();
-//        return slugify.withCustomReplacement("_", "-")
-//                .slugify(slug);
-//    }
+
 
 
 }
