@@ -28,15 +28,15 @@ public class AdminMapper {
                 .description(adminDoctorDto.getDescription())
                 .price(adminDoctorDto.getPrice())
                 .image(adminDoctorDto.getImage())
-                .details(slugifydetails(adminDoctorDto.getDetails()))
+                .details(adminDoctorDto.getDetails())
                 .build();
     }
 
-    private static String slugifydetails(String slug) {
-        Slugify slugify = new Slugify();
-        return slugify.withCustomReplacement("_", "-")
-                .slugify(slug);
-    }
+//    private static String slugifydetails(String slug) {
+//        Slugify slugify = new Slugify();
+//        return slugify.withCustomReplacement("_", "-")
+//                .slugify(slug);
+//    }
 
 
 }
