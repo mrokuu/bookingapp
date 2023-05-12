@@ -33,8 +33,8 @@ public class AdminDoctorService {
     //    public AdminDoctor createDoctor(AdminDoctor doctor) {
 //        return adminDoctorRepository.save(doctor);
 //    }
-    public void createDoctor(AdminDoctorDto adminDoctorDto) {
-        AdminDoctor adminDoctor = AdminMapper.mapAdminDoctor(adminDoctorDto);
+    public void createDoctor(AdminDoctorDto adminDoctorDto, Long id) {
+        AdminDoctor adminDoctor = AdminMapper.mapAdminDoctor(adminDoctorDto, id);
         adminDoctorRepository.save(adminDoctor);
     }
 
@@ -43,7 +43,7 @@ public class AdminDoctorService {
 //    }
 
     public AdminDoctor updateeDoctor(AdminDoctorDto adminDoctorDto, Long id) {
-        AdminDoctor adminDoctor = AdminMapper.mapAdminDoctorWithId(adminDoctorDto, id);
+        AdminDoctor adminDoctor = AdminMapper.mapAdminDoctor(adminDoctorDto, id);
         return adminDoctorRepository.save(adminDoctor);
     }
 

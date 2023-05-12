@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class AdminMapper {
 
 
-    public static AdminDoctor mapAdminDoctor(AdminDoctorDto adminDoctorDto){
-        return AdminDoctor.builder()
-                .id(adminDoctorDto.getId())
-                .name(adminDoctorDto.getName())
-                .specialization(adminDoctorDto.getSpecialization())
-                .description(adminDoctorDto.getDescription())
-                .price(adminDoctorDto.getPrice())
-                .build();
-    }
+//    public static AdminDoctor mapAdminDoctor(AdminDoctorDto adminDoctorDto){
+//        return AdminDoctor.builder()
+//                .id(adminDoctorDto.getId())
+//                .name(adminDoctorDto.getName())
+//                .specialization(adminDoctorDto.getSpecialization())
+//                .description(adminDoctorDto.getDescription())
+//                .price(adminDoctorDto.getPrice())
+//                .build();
+//    }
 
-    public static AdminDoctor mapAdminDoctorWithId(AdminDoctorDto adminDoctorDto, Long id){
+    public static AdminDoctor mapAdminDoctor(AdminDoctorDto adminDoctorDto, Long id){
         return AdminDoctor.builder()
                 .id(id)
                 .name(adminDoctorDto.getName())
@@ -29,4 +29,8 @@ public class AdminMapper {
                 .image((adminDoctorDto.getImage()))
                 .build();
     }
+
+
+
+
 }

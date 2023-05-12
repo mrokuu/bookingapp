@@ -39,22 +39,13 @@ public class AdminDoctorController {
     }
 
 
-//    @PostMapping ("/admin/doctors/{id}")
-//    public AdminDoctor createDoctor(@RequestBody AdminDoctorDto adminDoctorDto){
-//        return adminDoctorService.createDoctor(mapAdminDoctor(adminDoctorDto, EMPTY_ID)
-//        );
-//    }
+
 
     @PostMapping ("/admin/doctors")
     public void createDoctor(@RequestBody @Valid AdminDoctorDto adminDoctorDto){
-        adminDoctorService.createDoctor(adminDoctorDto);
+        adminDoctorService.createDoctor(adminDoctorDto, EMPTY_ID);
     }
-//
-//    @PutMapping ("/admin/doctors/{id}")
-//    public AdminDoctor createDoctor(@RequestBody AdminDoctorDto adminDoctorDto, @PathVariable Long id){
-//        return adminDoctorService.updateeDoctor(mapAdminDoctor(adminDoctorDto, id)
-//        );
-//    }
+
 
     @PutMapping ("/admin/doctors/{id}")
     public void createDoctor(@RequestBody @Valid AdminDoctorDto adminDoctorDto, @PathVariable Long id){
@@ -82,13 +73,5 @@ public class AdminDoctorController {
     }
 
 
-//    public AdminDoctor mapAdminDoctor(AdminDoctorDto adminDoctorDto, Long id){
-//        return AdminDoctor.builder()
-//                .id(id)
-//                .name(adminDoctorDto.getName())
-//                .specialization(adminDoctorDto.getSpecialization())
-//                .description(adminDoctorDto.getDescription())
-//                .price(adminDoctorDto.getPrice())
-//                .build();
-//    }
+
 }
