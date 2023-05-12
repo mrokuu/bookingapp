@@ -22,4 +22,5 @@ public class AdminDoctor {
     private String description;
     private BigDecimal price;
     private String image;
+    private String details;
 }

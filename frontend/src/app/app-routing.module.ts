@@ -10,12 +10,14 @@ import { AdminComponent } from './modules/admin/admin.component';
 import { AdminDoctorComponent } from './modules/admin/admin-doctor/admin-doctor.component';
 import { AdminDoctorUpdateComponent } from './modules/admin/admin-doctor-update/admin-doctor-update.component';
 import { AdminDoctorAddComponent } from './modules/admin/admin-doctor-add/admin-doctor-add.component';
+import { DoctorDetailComponent } from './modules/doctor-detail/doctor-detail.component';
 
 const routes: Routes = [
   {
     path:'', component: DefaultComponent, children: [
       {path: '', component: HomeComponent},
       {path: 'doctors', component: DoctorComponent},
+      {path: 'doctors/:details', component: DoctorDetailComponent},
     ]
   },
   {

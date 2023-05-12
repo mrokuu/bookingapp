@@ -7,11 +7,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+
 public class DoctorService {
     private final DoctorRepository doctorRepository;
 
@@ -20,4 +22,8 @@ public class DoctorService {
         return doctorRepository.findAll(pageable);
     }
 
+    public Doctor getDoctorByDetails(Long id) {
+
+        return doctorRepository.findById(id).orElseThrow();
+    }
 }

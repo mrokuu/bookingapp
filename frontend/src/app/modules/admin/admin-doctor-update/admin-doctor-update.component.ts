@@ -30,7 +30,8 @@ export class AdminDoctorUpdateComponent {
       name: ['', [Validators.required, Validators.minLength(4)]],
       description: ['', [Validators.required, Validators.minLength(4)]],
       specialization: ['', [Validators.required, Validators.minLength(4)]],
-      price: ['', [Validators.required, Validators.min(0)]]
+      price: ['', [Validators.required, Validators.min(0)]],
+      details: ['', [Validators.required, Validators.minLength(4)]]
     })
 
     this.imageForm = this.formBuilder.group({
@@ -44,7 +45,8 @@ export class AdminDoctorUpdateComponent {
       name: doctor.name,
       description: doctor.description,
       specialization: doctor.specialization,
-      price: doctor.price
+      price: doctor.price,
+      details: doctor.details
     }))
   }
 
@@ -55,12 +57,14 @@ export class AdminDoctorUpdateComponent {
       description: this.doctorForm.get('description')?.value,
       specialization: this.doctorForm.get('specialization')?.value,
       price: this.doctorForm.get('price')?.value,
+      details: this.doctorForm.get('details')?.value,
       image: this.image
     } as AdminDoctorUpdate).subscribe(doctor => this.doctorForm.setValue({
       name: doctor.name ,
       description: doctor.description,
       specialization: doctor.specialization,
-      price: doctor.price
+      price: doctor.price,
+      details:doctor.details
     }))
   }
 

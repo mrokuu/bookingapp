@@ -1,3 +1,3 @@
 --liquibase formatted sql
---changeset mdabrowski:2
+--changeset amroczkowski:2
 alter table doctor add image varchar(128) after price;

@@ -1,0 +1,22 @@
+<div fxLayout="column">
+  <div fxLayout="row" fxFlex fxLayoutGap="20">
+      <div>
+          <img *ngIf="!doctor?.image" src="../../../assets/doctor.jpeg" width="350">
+          <!-- <img *ngIf="doctor?.image" src="{{'/api/data/productImage/'+ doctor?.image}}" width="350"> -->
+      </div>
+      <div fxLayout="column" fxFlex>
+          <h1 >{{doctor?.name}}</h1>
+          <small>{{doctor?.specialization}}</small>
+          <div class="description">
+              {{doctor?.description}}
+          </div>
+          <div fxLayout="row" fxFlexAlign="end">
+              <span class="price">{{doctor?.price}}</span>
+          </div>
+          <button mat-flat-button color="warn">Click</button>
+      </div>
+  </div>
+  <div class="fullDescription">
+      {{doctor?.details}}
+  </div>
+</div>

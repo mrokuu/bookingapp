@@ -22,5 +22,8 @@ public class Doctor {
     private String description;
     private BigDecimal price;
 
+    private String image;
+    private String details;
+
 
 }

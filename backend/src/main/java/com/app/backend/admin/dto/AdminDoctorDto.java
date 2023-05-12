@@ -23,4 +23,6 @@ public class AdminDoctorDto {
     @Min(0)
     private BigDecimal price;
     private String image;
+    @NotBlank
+    private String details;
 }

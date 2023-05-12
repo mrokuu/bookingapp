@@ -34,7 +34,8 @@ export class AdminDoctorAddComponent {
       name: ['', [Validators.required, Validators.minLength(4)]],
       description: ['', [Validators.required, Validators.minLength(4)]],
       specialization: ['', [Validators.required, Validators.minLength(4)]],
-      price: ['', [Validators.required, Validators.min(0)]]
+      price: ['', [Validators.required, Validators.min(0)]],
+      details: ['', [Validators.required, Validators.minLength(4)]]
     })
 
     this.imageForm = this.formBuilder.group({

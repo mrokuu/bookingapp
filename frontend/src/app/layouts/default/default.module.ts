@@ -6,6 +6,7 @@ import { DoctorComponent } from 'src/app/modules/doctor/doctor.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { DoctorDetailComponent } from 'src/app/modules/doctor-detail/doctor-detail.component';
 
 
 
@@ -13,7 +14,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [
     DefaultComponent,
     HomeComponent,
-    DoctorComponent
+    DoctorComponent,
+    DoctorDetailComponent
   ],
   imports: [
     CommonModule,

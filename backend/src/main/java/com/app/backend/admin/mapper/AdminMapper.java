@@ -2,6 +2,7 @@ package com.app.backend.admin.mapper;
 
 import com.app.backend.admin.dto.AdminDoctorDto;
 import com.app.backend.admin.model.AdminDoctor;
+import com.github.slugify.Slugify;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,18 +20,23 @@ public class AdminMapper {
 //                .build();
 //    }
 
-    public static AdminDoctor mapAdminDoctor(AdminDoctorDto adminDoctorDto, Long id){
+    public static AdminDoctor mapAdminDoctor (AdminDoctorDto adminDoctorDto, Long id){
         return AdminDoctor.builder()
                 .id(id)
                 .name(adminDoctorDto.getName())
                 .specialization(adminDoctorDto.getSpecialization())
                 .description(adminDoctorDto.getDescription())
                 .price(adminDoctorDto.getPrice())
-                .image((adminDoctorDto.getImage()))
+                .image(adminDoctorDto.getImage())
+                .details(slugifydetails(adminDoctorDto.getDetails()))
                 .build();
     }
 
-
+    private static String slugifydetails(String slug) {
+        Slugify slugify = new Slugify();
+        return slugify.withCustomReplacement("_", "-")
+                .slugify(slug);
+    }
 
 
 }
