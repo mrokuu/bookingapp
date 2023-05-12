@@ -4,5 +4,4 @@ export interface AdminDoctorUpdate {
   description: string,
   specialization: string,
   price: number
-  image:string
 }

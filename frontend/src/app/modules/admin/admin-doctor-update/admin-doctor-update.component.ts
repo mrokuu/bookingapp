@@ -32,8 +32,11 @@ export class AdminDoctorUpdateComponent {
       specialization: ['', [Validators.required, Validators.minLength(4)]],
       price: ['', [Validators.required, Validators.min(0)]]
     })
-  }
 
+    this.imageForm = this.formBuilder.group({
+      file: ['']
+  })
+  }
 
   getDoctor(){
     let id = Number(this.router.snapshot.params['id'])
@@ -52,6 +55,7 @@ export class AdminDoctorUpdateComponent {
       description: this.doctorForm.get('description')?.value,
       specialization: this.doctorForm.get('specialization')?.value,
       price: this.doctorForm.get('price')?.value,
+      image: this.image
     } as AdminDoctorUpdate).subscribe(doctor => this.doctorForm.setValue({
       name: doctor.name ,
       description: doctor.description,

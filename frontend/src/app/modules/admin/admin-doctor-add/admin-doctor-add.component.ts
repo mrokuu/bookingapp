@@ -16,8 +16,10 @@ export class AdminDoctorAddComponent {
 
 
   doctor!: AdminDoctorUpdate
-
   doctorForm!: FormGroup
+  requiredFileTypes = "image/jpeg, image/png";
+  imageForm!: FormGroup;
+  image: string | null = null;
 
   constructor(
     private router : Router,
@@ -34,6 +36,10 @@ export class AdminDoctorAddComponent {
       specialization: ['', [Validators.required, Validators.minLength(4)]],
       price: ['', [Validators.required, Validators.min(0)]]
     })
+
+    this.imageForm = this.formBuilder.group({
+      file: ['']
+    })
   }
 
 
@@ -48,5 +54,22 @@ export class AdminDoctorAddComponent {
 
     })
   }
+
+
+  uploadFile(){
+    let formData = new FormData();
+    formData.append('file', this.imageForm.get('file')?.value);
+    this.adminDoctorAddService.uploadImage(formData)
+      .subscribe(result => this.image = result.filename);
+  }
+
+  onFileChange(event: any){
+    if(event.target.files.length > 0){
+      this.imageForm.patchValue({
+        file: event.target.files[0]
+      });
+    }
+  }
+
 
 }

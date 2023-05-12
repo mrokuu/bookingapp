@@ -30,13 +30,13 @@ public class AdminDoctorService {
     }
 
 
-//    public AdminDoctor createDoctor(AdminDoctor doctor) {
+    //    public AdminDoctor createDoctor(AdminDoctor doctor) {
 //        return adminDoctorRepository.save(doctor);
 //    }
-public void createDoctor(AdminDoctorDto adminDoctorDto) {
+    public void createDoctor(AdminDoctorDto adminDoctorDto) {
         AdminDoctor adminDoctor = AdminMapper.mapAdminDoctor(adminDoctorDto);
         adminDoctorRepository.save(adminDoctor);
-}
+    }
 
 //    public AdminDoctor updateeDoctor(AdminDoctor doctor) {
 //        return adminDoctorRepository.save(doctor);
