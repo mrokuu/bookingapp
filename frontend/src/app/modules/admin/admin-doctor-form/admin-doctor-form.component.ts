@@ -19,6 +19,7 @@ import { FormGroup } from "@angular/forms";
   <mat-form-field appearance="fill">
       <mat-label>Specialization</mat-label>
       <input matInput placeholder="Enter specializaiont" formControlName="specialization">
+      
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -45,5 +46,5 @@ export class AdminProductFormConponent implements OnInit {
 
     }
 
-    
+
 }

@@ -2,7 +2,7 @@ export interface AdminDoctorUpdate {
   id:number,
   name: string,
   description: string,
-  specialization: string,
+  specializationId: number,
   price: number
   image:string,
   details:string

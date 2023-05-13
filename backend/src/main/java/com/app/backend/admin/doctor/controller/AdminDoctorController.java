@@ -1,10 +1,9 @@
-package com.app.backend.admin.controller;
+package com.app.backend.admin.doctor.controller;
 
-import com.app.backend.admin.dto.AdminDoctorDto;
-import com.app.backend.admin.dto.UploadResponse;
-import com.app.backend.admin.mapper.AdminMapper;
-import com.app.backend.admin.model.AdminDoctor;
-import com.app.backend.admin.service.AdminDoctorService;
+import com.app.backend.admin.doctor.dto.AdminDoctorDto;
+import com.app.backend.admin.doctor.dto.UploadResponse;
+import com.app.backend.admin.doctor.model.AdminDoctor;
+import com.app.backend.admin.doctor.service.AdminDoctorService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

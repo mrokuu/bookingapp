@@ -1,4 +1,4 @@
-package com.app.backend.admin.dto;
+package com.app.backend.admin.doctor.dto;
 
 public record UploadResponse(String fileName) {
 

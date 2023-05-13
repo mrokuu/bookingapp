@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { AdminDoctorUpdate } from './model/adminDoctorUpdate';
 import { Observable } from 'rxjs';
 import { UploadResponse } from './model/UploadResponse';
+import { AdminSpecializationNameDto } from '../admin-doctor-add/model/AdminSpecializationNameDto';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,10 @@ export class AdminDoctorUpdateService {
 
   uploadImage(formData: FormData): Observable<UploadResponse> {
     return this.http.post<UploadResponse>('/api/admin/products/upload-image', formData);
+  }
+
+  getSpecialization(): Observable<Array<AdminSpecializationNameDto>>{
+    return this.http.get<Array<AdminSpecializationNameDto>>("/api/admin/specializations");
+
   }
 }

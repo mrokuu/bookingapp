@@ -1,4 +1,4 @@
-package com.app.backend.admin.dto;
+package com.app.backend.admin.doctor.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -15,9 +15,9 @@ public class AdminDoctorDto {
     private Long id;
     @NotBlank
     private String name;
-    @NotBlank
-    private String specialization;
-    @NotBlank
+    @NotNull
+    private Long specializationId;
+     @NotBlank
     private String description;
     @NotNull
     @Min(0)

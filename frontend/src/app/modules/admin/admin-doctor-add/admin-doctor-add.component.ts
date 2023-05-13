@@ -6,6 +6,7 @@ import { AdminDoctorUpdateService } from '../admin-doctor-update/admin-doctor-up
 import { AdminDoctorAddService } from './admin-doctor-add.service';
 import { AdminMessageComponent } from '../admin-message/admin-message.component';
 import { AdminMessageService } from '../admin-message.service';
+import { AdminSpecializationNameDto } from './model/AdminSpecializationNameDto';
 
 @Component({
   selector: 'app-admin-doctor-add',
@@ -20,6 +21,8 @@ export class AdminDoctorAddComponent {
   requiredFileTypes = "image/jpeg, image/png";
   imageForm!: FormGroup;
   image: string | null = null;
+  specializations : Array<AdminSpecializationNameDto> = [];
+
 
   constructor(
     private router : Router,
@@ -33,7 +36,7 @@ export class AdminDoctorAddComponent {
     this.doctorForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(4)]],
       description: ['', [Validators.required, Validators.minLength(4)]],
-      specialization: ['', [Validators.required, Validators.minLength(4)]],
+      specializationId: ['', [Validators.required ]],
       price: ['', [Validators.required, Validators.min(0)]],
       details: ['', [Validators.required, Validators.minLength(4)]]
     })
@@ -41,6 +44,8 @@ export class AdminDoctorAddComponent {
     this.imageForm = this.formBuilder.group({
       file: ['']
     })
+
+    this.getSpecialization()
   }
 
 
@@ -70,6 +75,12 @@ export class AdminDoctorAddComponent {
         file: event.target.files[0]
       });
     }
+  }
+
+
+  getSpecialization(){
+    this.adminDoctorAddService.getSpecialization()
+    .subscribe(specialization => this.specializations = specialization)
   }
 
 

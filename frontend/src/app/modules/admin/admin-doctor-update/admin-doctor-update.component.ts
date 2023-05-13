@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AdminDoctorUpdateService } from './admin-doctor-update.service';
 import { AdminDoctorUpdate } from './model/adminDoctorUpdate';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AdminSpecializationNameDto } from '../admin-doctor-add/model/AdminSpecializationNameDto';
 
 @Component({
   selector: 'app-admin-doctor-update',
@@ -17,6 +18,8 @@ export class AdminDoctorUpdateComponent {
   requiredFileTypes = "image/jpeg, image/png";
   imageForm!: FormGroup;
   image: string | null = null;
+  specializations : Array<AdminSpecializationNameDto> = [];
+
 
   constructor(
     private router : ActivatedRoute,
@@ -29,7 +32,7 @@ export class AdminDoctorUpdateComponent {
     this.doctorForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(4)]],
       description: ['', [Validators.required, Validators.minLength(4)]],
-      specialization: ['', [Validators.required, Validators.minLength(4)]],
+      specializationId: ['', [Validators.required]],
       price: ['', [Validators.required, Validators.min(0)]],
       details: ['', [Validators.required, Validators.minLength(4)]]
     })
@@ -37,16 +40,18 @@ export class AdminDoctorUpdateComponent {
     this.imageForm = this.formBuilder.group({
       file: ['']
   })
+
+  this.getSpecialization()
   }
 
   getDoctor(){
     let id = Number(this.router.snapshot.params['id'])
     this.adminDoctorUpdateService.getDoctor(id).subscribe(doctor => this.doctorForm.setValue({
-      name: doctor.name,
-      description: doctor.description,
-      specialization: doctor.specialization,
-      price: doctor.price,
-      details: doctor.details
+      name: doctor?.name,
+      description: doctor?.description,
+      specializationId: doctor?.specializationId,
+      price: doctor?.price,
+      details: doctor?.details
     }))
   }
 
@@ -55,16 +60,16 @@ export class AdminDoctorUpdateComponent {
     this.adminDoctorUpdateService.saveDoctor(id, {
       name: this.doctorForm.get('name')?.value,
       description: this.doctorForm.get('description')?.value,
-      specialization: this.doctorForm.get('specialization')?.value,
+      specializationId: this.doctorForm.get('specializationId')?.value,
       price: this.doctorForm.get('price')?.value,
       details: this.doctorForm.get('details')?.value,
       image: this.image
     } as AdminDoctorUpdate).subscribe(doctor => this.doctorForm.setValue({
-      name: doctor.name ,
-      description: doctor.description,
-      specialization: doctor.specialization,
-      price: doctor.price,
-      details:doctor.details
+      name: doctor?.name ,
+      description: doctor?.description,
+      specializationId: doctor?.specializationId,
+      price: doctor?.price,
+      details:doctor?.details
     }))
   }
 
@@ -83,6 +88,11 @@ export class AdminDoctorUpdateComponent {
         file: event.target.files[0]
       });
     }
+  }
+
+  getSpecialization(){
+    this.adminDoctorUpdateService.getSpecialization()
+    .subscribe(specialization => this.specializations = specialization)
   }
 
 }

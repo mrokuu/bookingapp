@@ -1,11 +1,9 @@
-package com.app.backend.admin.mapper;
+package com.app.backend.admin.doctor.mapper;
 
-import com.app.backend.admin.dto.AdminDoctorDto;
-import com.app.backend.admin.model.AdminDoctor;
-import com.github.slugify.Slugify;
+import com.app.backend.admin.doctor.model.AdminDoctor;
+import com.app.backend.admin.doctor.dto.AdminDoctorDto;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+
 @Component
 public class AdminMapper {
 
@@ -24,7 +22,7 @@ public class AdminMapper {
         return AdminDoctor.builder()
                 .id(id)
                 .name(adminDoctorDto.getName())
-                .specialization(adminDoctorDto.getSpecialization())
+                .specializationId(adminDoctorDto.getSpecializationId())
                 .description(adminDoctorDto.getDescription())
                 .price(adminDoctorDto.getPrice())
                 .image(adminDoctorDto.getImage())

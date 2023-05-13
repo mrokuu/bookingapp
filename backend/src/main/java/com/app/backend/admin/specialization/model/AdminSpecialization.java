@@ -1,26 +1,20 @@
-package com.app.backend.admin.model;
+package com.app.backend.admin.specialization.model;
 
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigDecimal;
-
 @Entity
 @Getter
 @Setter
-@Table( name= "doctor")
+@Table( name= "specialization")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AdminDoctor {
-
+public class AdminSpecialization {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
     private String name;
-    private String specialization;
     private String description;
-    private BigDecimal price;
-    private String image;
     private String details;
 }

@@ -1,19 +1,19 @@
-package com.app.backend.doctor.model;
+package com.app.backend.admin.doctor.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
 
+@Entity
 @Getter
 @Setter
-@AllArgsConstructor
+@Table( name= "doctor")
+@Builder
 @NoArgsConstructor
-@Entity
-public class Doctor {
+@AllArgsConstructor
+public class AdminDoctor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -21,9 +21,6 @@ public class Doctor {
     private Long specializationId;
     private String description;
     private BigDecimal price;
-
     private String image;
     private String details;
-
-
 }
