@@ -13,6 +13,7 @@ import { AdminDoctorAddComponent } from 'src/app/modules/admin/admin-doctor-add/
 import { AdminProductFormConponent } from 'src/app/modules/admin/admin-doctor-form/admin-doctor-form.component';
 import { AdminMessageComponent } from 'src/app/modules/admin/admin-message/admin-message.component';
 import { AdminConfirmationComponent } from 'src/app/modules/admin/admin-confirmation/admin-confirmation.component';
+import { AdminSpecializationComponent } from 'src/app/modules/admin/admin-specialization/admin-specialization.component';
 
 
 
@@ -26,7 +27,8 @@ import { AdminConfirmationComponent } from 'src/app/modules/admin/admin-confirma
     AdminDoctorAddComponent,
     AdminProductFormConponent,
     AdminMessageComponent,
-    AdminConfirmationComponent
+    AdminConfirmationComponent,
+    AdminSpecializationComponent
   ],
   imports: [
     CommonModule,
