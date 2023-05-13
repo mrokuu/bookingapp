@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { AdminSpecializationNameDto } from './model/AdminSpecializationNameDto';
 import { AdminSpecializationService } from './admin-specialization.service';
 import { MatTable } from '@angular/material/table';
+import { AdminSpecializationDto } from '../../common/AdminSpecializationDto';
 
 @Component({
   selector: 'app-admin-specialization',
@@ -12,7 +12,7 @@ export class AdminSpecializationComponent {
 
 
   displayedColumns: string[] = [ "id", "name", "actions"];
-  data: Array<AdminSpecializationNameDto> = [];
+  data: Array<AdminSpecializationDto> = [];
 
   @ViewChild(MatTable) table!: MatTable<any>;
 
@@ -26,13 +26,11 @@ export class AdminSpecializationComponent {
   }
 
   getCategories(){
-    this.adminSpecializationService.getCategories()
+    this.adminSpecializationService.getSpecializations()
       .subscribe(categories => this.data = categories);
   }
 
-  confirmDelete(element: AdminSpecializationNameDto) {
-
-
+  confirmDelete(element: AdminSpecializationDto) {
 
   }
 

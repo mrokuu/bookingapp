@@ -12,6 +12,8 @@ import { AdminDoctorUpdateComponent } from './modules/admin/admin-doctor-update/
 import { AdminDoctorAddComponent } from './modules/admin/admin-doctor-add/admin-doctor-add.component';
 import { DoctorDetailComponent } from './modules/doctor-detail/doctor-detail.component';
 import { AdminSpecializationComponent } from './modules/admin/admin-specialization/admin-specialization.component';
+import { AdminSpecializationAddComponent } from './modules/admin/admin-specialization/admin-specialization-add/admin-specialization-add.component';
+import { AdminSpecializationUpdateComponent } from './modules/admin/admin-specialization/admin-specialization-update/admin-specialization-update.component';
 
 const routes: Routes = [
   {
@@ -33,6 +35,8 @@ const routes: Routes = [
       {path: 'admin/doctors/update/:id', component: AdminDoctorUpdateComponent},
       {path: 'admin/doctors/add', component: AdminDoctorAddComponent},
       {path: 'admin/specialization', component: AdminSpecializationComponent},
+      {path: 'admin/specialization/add', component: AdminSpecializationAddComponent},
+      {path: 'admin/specialization/update/:id', component: AdminSpecializationUpdateComponent},
     ]
   }
 ];

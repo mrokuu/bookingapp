@@ -1,4 +1,4 @@
-export interface AdminSpecializationNameDto{
+export interface AdminSpecialization{
   id: number,
   name: string,
   description: string,

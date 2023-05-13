@@ -14,6 +14,9 @@ import { AdminProductFormConponent } from 'src/app/modules/admin/admin-doctor-fo
 import { AdminMessageComponent } from 'src/app/modules/admin/admin-message/admin-message.component';
 import { AdminConfirmationComponent } from 'src/app/modules/admin/admin-confirmation/admin-confirmation.component';
 import { AdminSpecializationComponent } from 'src/app/modules/admin/admin-specialization/admin-specialization.component';
+import { AdminSpecializationUpdateComponent } from 'src/app/modules/admin/admin-specialization/admin-specialization-update/admin-specialization-update.component';
+import { AdminSpecializationAddComponent } from 'src/app/modules/admin/admin-specialization/admin-specialization-add/admin-specialization-add.component';
+import { AdminSpecializationFormConponent } from 'src/app/modules/admin/admin-specialization/admin-specialization-form/admin-specialization-form';
 
 
 
@@ -28,7 +31,10 @@ import { AdminSpecializationComponent } from 'src/app/modules/admin/admin-specia
     AdminProductFormConponent,
     AdminMessageComponent,
     AdminConfirmationComponent,
-    AdminSpecializationComponent
+    AdminSpecializationComponent,
+    AdminSpecializationUpdateComponent,
+    AdminSpecializationAddComponent,
+    AdminSpecializationFormConponent
   ],
   imports: [
     CommonModule,
