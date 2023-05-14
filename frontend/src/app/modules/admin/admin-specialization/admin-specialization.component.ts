@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { AdminSpecializationService } from './admin-specialization.service';
 import { MatTable } from '@angular/material/table';
 import { AdminSpecializationDto } from '../../common/AdminSpecializationDto';
+import { AdminConfirmationService } from '../admin-confirmation.service';
 
 @Component({
   selector: 'app-admin-specialization',
@@ -18,7 +19,7 @@ export class AdminSpecializationComponent {
 
   constructor(
     private adminSpecializationService: AdminSpecializationService,
-
+    private adminConfirmationService : AdminConfirmationService
     ) { }
 
   ngOnInit(): void {
@@ -31,7 +32,21 @@ export class AdminSpecializationComponent {
   }
 
   confirmDelete(element: AdminSpecializationDto) {
-
+    this.adminConfirmationService.openConfirmDialog("Are you sure do you want to delete specializatio?")
+    .afterClosed()
+    .subscribe(result => {
+      if(result) {
+        this.adminSpecializationService.delete(element.id)
+          .subscribe(() => {
+            this.data.forEach((value, index) => {
+              if(element == value) {
+                this.data.splice(index, 1);
+                this.table.renderRows();
+              }
+            })
+          });
+      }
+    });
   }
 
 }

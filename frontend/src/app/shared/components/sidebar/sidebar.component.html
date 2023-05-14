@@ -1,5 +1,7 @@
 <mat-selection-list [multiple]="false">
-  <mat-list-option *ngFor="let category of categorys">
-      {{category}}
+  <mat-list-option *ngFor="let specialization of specializations">
+    <a routerLink="{{'/specializations/' + specialization.name}}">{{specialization.name}}</a>
   </mat-list-option>
 </mat-selection-list>
+
+

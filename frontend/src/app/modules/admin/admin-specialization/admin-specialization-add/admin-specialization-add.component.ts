@@ -31,7 +31,13 @@ export class AdminSpecializationAddComponent {
   }
 
   submit(){
-    
+    this.adminSpecializationService.createSpecialization(this.specializationForm.value)
+      .subscribe({
+        next: category => {
+          this.router.navigate(["/admin/specialization"])
+        
+        }
+      })
   }
 
 }
