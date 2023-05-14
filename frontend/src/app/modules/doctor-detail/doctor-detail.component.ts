@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DoctorDetails } from './model/doctorDetails';
 import { ActivatedRoute } from '@angular/router';
 import { DoctorDetailService } from './doctor-detail.service';
+import { Doctor } from '../common/doctor';
 
 @Component({
   selector: 'app-doctor-detail',
@@ -10,7 +11,7 @@ import { DoctorDetailService } from './doctor-detail.service';
 })
 export class DoctorDetailComponent {
 
-  doctor!: DoctorDetails;
+  doctor!: Doctor;
 
   constructor(
     private doctorDetailsService: DoctorDetailService,

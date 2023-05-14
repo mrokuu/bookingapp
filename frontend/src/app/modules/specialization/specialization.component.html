@@ -1,11 +1,12 @@
-<mat-card *ngFor="let doctor of specializationDoctors?.doctor?.content">
+<h1>Specialization:{{specializationDoctors?.specialization?.name}}</h1>
+<mat-card *ngFor="let doctor of specializationDoctors?.doctors?.content">
   <div flexLayout="row">
       <div flexLayout="column" fxFlex>
-          <mat-card-title><a routerLink="{{'/products/' + doctor.details}}">{{doctor.name}}</a></mat-card-title>
+          <mat-card-title><a routerLink="{{'/doctors/' + doctor.id}}">{{doctor.name}}</a></mat-card-title>
           <mat-card-subtitle>{{doctor.specialization}}</mat-card-subtitle>
           <div flexLayout="row">
-              <a routerLink="{{'/products/' + doctor.details}}">
-                  <img *ngIf="!doctor?.image" src="/assets/image-placeholder.png" mat-card-lg-image class="productImage">
+              <a routerLink="{{'/doctors/' + doctor.id}}">
+                  <img *ngIf="!doctor?.image" src="../../../assets/doctor.jpeg" mat-card-lg-image class="productImage">
                   <img *ngIf="doctor?.image" src="{{'/api/data/productImage/'+ doctor?.image}}" mat-card-lg-image class="productImage">
               </a>
               <mat-card-content fxFlex class="productContent">{{doctor.description}}</mat-card-content>
@@ -16,6 +17,15 @@
       </div>
   </div>
   <mat-card-actions align="end" fxLayoutGap="10">
-      <button mat-flat-button color="accent" routerLink="{{'/doctors/' + doctor.details}}">View</button>
+      <button mat-flat-button color="primary" routerLink="{{'/doctors/' + doctor.id}}">View</button>
   </mat-card-actions>
 </mat-card>
+
+
+<mat-paginator *ngIf="specializationDoctors?.doctors && specializationDoctors.doctors.totalElements > 0"
+  [length]="specializationDoctors.doctors.totalElements"
+   [pageSize]="10"
+   [pageSizeOptions]="[10, 25, 50, 100]"
+   aria-label="Choose a side"
+   (page)="onPageChange($event)">
+</mat-paginator>

@@ -1,9 +1,9 @@
-import { Doctor } from "../../common/doctor";
 import { Page } from "../../common/page";
+import { Doctor } from "../../common/doctor";
 import { Specialization } from "./specialization";
 
 
 export interface SpecializationDoctors{
   specialization: Specialization,
-  doctor: Page<Doctor>
+  doctors: Page<Doctor>
 }

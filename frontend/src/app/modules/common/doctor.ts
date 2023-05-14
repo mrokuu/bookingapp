@@ -1,8 +1,9 @@
 export interface Doctor{
+  id:number,
   name: string,
-  specialization: string,
   description: string,
+  details: string,
+  specialization: string,
   price: number,
   image: string,
-  details: string
 }
