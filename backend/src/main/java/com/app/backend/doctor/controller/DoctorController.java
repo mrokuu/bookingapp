@@ -1,11 +1,13 @@
 package com.app.backend.doctor.controller;
 
+import com.app.backend.doctor.dto.DoctorListDto;
 import com.app.backend.doctor.model.Doctor;
 import com.app.backend.doctor.service.DoctorService;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,9 +26,18 @@ public class DoctorController {
 
 
     @GetMapping("/doctors")
-    public Page<Doctor> getDoctors(Pageable pageable){
-
-        return doctorService.getDoctor(pageable);
+    public Page<DoctorListDto> getDoctors(Pageable pageable){
+        Page<Doctor> doctors = doctorService.getDoctor(pageable);
+            List<DoctorListDto> doctorListDtos = doctors.getContent().stream()
+                    .map(doctor -> DoctorListDto.builder()
+                            .id(doctor.getId())
+                            .name(doctor.getName())
+                            .description(doctor.getDescription())
+                            .price(doctor.getPrice())
+                            .details(doctor.getDetails())
+                            .image(doctor.getImage())
+                            .build()).toList();
+        return new PageImpl<>(doctorListDtos,pageable, doctors.getTotalElements());
     }
 
 @GetMapping("/doctors/{id}")

@@ -1,5 +1,6 @@
 package com.app.backend.specialization.service;
 
+import com.app.backend.doctor.dto.DoctorListDto;
 import com.app.backend.doctor.model.Doctor;
 import com.app.backend.doctor.repository.DoctorRepository;
 import com.app.backend.specialization.dto.SpecializationDto;
@@ -7,6 +8,7 @@ import com.app.backend.specialization.model.Specialization;
 import com.app.backend.specialization.repository.SpecializationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +30,15 @@ public class SpecializationService {
     public SpecializationDto getSpecializationWithDoctors(String name, Pageable pageable) {
         Specialization specialization = specializationRepository.findByName(name);
         Page<Doctor> page = doctorRepository.findBySpecializationId(specialization.getId(), pageable);
-        return  new SpecializationDto(specialization, page);
+        List<DoctorListDto> doctorListDtos = page.getContent().stream()
+                .map(doctor -> DoctorListDto.builder()
+                        .id(doctor.getId())
+                        .name(doctor.getName())
+                        .description(doctor.getDescription())
+                        .price(doctor.getPrice())
+                        .details(doctor.getDetails())
+                        .image(doctor.getImage())
+                        .build()).toList();
+        return  new SpecializationDto(specialization, new PageImpl<>(doctorListDtos, pageable, page.getTotalElements()));
     }
 }
