@@ -1,4 +1,4 @@
-package com.app.backend.doctor.dto;
+package com.app.backend.common.dto;
 
 import lombok.Builder;
 import lombok.Getter;

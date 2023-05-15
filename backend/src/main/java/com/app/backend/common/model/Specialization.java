@@ -1,10 +1,7 @@
-package com.app.backend.specialization.model;
+package com.app.backend.common.model;
 
-import com.app.backend.doctor.model.Doctor;
 import jakarta.persistence.*;
 import lombok.Getter;
-
-import java.util.List;
 
 @Entity
 @Getter

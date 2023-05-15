@@ -1,7 +1,7 @@
 package com.app.backend.specialization.controller;
 
 import com.app.backend.specialization.dto.SpecializationDto;
-import com.app.backend.specialization.model.Specialization;
+import com.app.backend.common.model.Specialization;
 import com.app.backend.specialization.service.SpecializationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;

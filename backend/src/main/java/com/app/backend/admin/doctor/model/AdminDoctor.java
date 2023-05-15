@@ -1,11 +1,9 @@
 package com.app.backend.admin.doctor.model;
 
-import com.app.backend.review.entity.Review;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Entity
 @Getter

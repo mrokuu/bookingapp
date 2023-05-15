@@ -1,7 +1,6 @@
 package com.app.backend.review.controller;
 
 import com.app.backend.review.dto.ReviewDto;
-import com.app.backend.review.entity.Review;
 import com.app.backend.review.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

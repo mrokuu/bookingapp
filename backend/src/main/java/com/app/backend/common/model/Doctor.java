@@ -1,6 +1,5 @@
-package com.app.backend.doctor.model;
+package com.app.backend.common.model;
 
-import com.app.backend.review.entity.Review;
 import jakarta.persistence.*;
 import lombok.*;
 

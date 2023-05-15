@@ -1,15 +1,11 @@
 package com.app.backend.doctor.service;
 
-import com.app.backend.doctor.model.Doctor;
-import com.app.backend.doctor.repository.DoctorRepository;
+import com.app.backend.common.model.Doctor;
+import com.app.backend.common.repository.DoctorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

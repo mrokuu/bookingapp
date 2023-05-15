@@ -1,11 +1,9 @@
 package com.app.backend.doctor.controller;
 
-import com.app.backend.doctor.dto.DoctorListDto;
-import com.app.backend.doctor.model.Doctor;
+import com.app.backend.common.dto.DoctorListDto;
+import com.app.backend.common.model.Doctor;
 import com.app.backend.doctor.service.DoctorService;
-import jakarta.validation.constraints.Pattern;
 import lombok.*;
-import org.hibernate.validator.constraints.Length;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @RestController

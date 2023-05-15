@@ -1,9 +1,7 @@
 package com.app.backend.review.mapper;
 
-import com.app.backend.admin.doctor.dto.AdminDoctorDto;
-import com.app.backend.admin.doctor.model.AdminDoctor;
 import com.app.backend.review.dto.ReviewDto;
-import com.app.backend.review.entity.Review;
+import com.app.backend.common.model.Review;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Safelist;
 

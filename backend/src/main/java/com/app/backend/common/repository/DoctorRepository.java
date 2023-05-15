@@ -1,6 +1,6 @@
-package com.app.backend.doctor.repository;
+package com.app.backend.common.repository;
 
-import com.app.backend.doctor.model.Doctor;
+import com.app.backend.common.model.Doctor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -4,7 +4,7 @@ import com.app.backend.admin.doctor.model.AdminDoctor;
 import com.app.backend.admin.doctor.repository.AdminDoctorRepository;
 import com.app.backend.admin.doctor.dto.AdminDoctorDto;
 import com.app.backend.admin.doctor.mapper.AdminMapper;
-import com.app.backend.doctor.repository.DoctorRepository;
+import com.app.backend.common.repository.DoctorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
