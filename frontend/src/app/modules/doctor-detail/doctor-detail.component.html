@@ -5,19 +5,19 @@
           <!-- <img *ngIf="doctor?.image" src="{{'/api/data/productImage/'+ doctor?.image}}" width="350"> -->
       </div>
       <div fxLayout="column" fxFlex>
-          <h1 >{{doctor?.name}}</h1>
-          <small>{{doctor?.specialization}}</small>
+          <h1 >{{doctor && doctor.name}}</h1>
+          <small>{{doctor && doctor.specialization}}</small>
           <div class="description">
-              {{doctor?.description}}
+              {{doctor && doctor.description}}
           </div>
           <div fxLayout="row" fxFlexAlign="end">
-              <span class="price">{{doctor?.price}}</span>
+              <span class="price">{{doctor && doctor.price}}</span>
           </div>
           <button mat-flat-button color="primary">Click</button>
       </div>
   </div>
   <div class="fullDescription">
-      {{doctor?.details}}
+      {{doctor && doctor.details}}
   </div>
 </div>
 

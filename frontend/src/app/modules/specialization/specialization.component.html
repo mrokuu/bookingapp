@@ -1,4 +1,4 @@
-<h1>Specialization:{{specializationDoctors?.specialization?.name}}</h1>
+<h1>Specialization:{{specializationDoctors && specializationDoctors.specialization && specializationDoctors.specialization.name}}</h1>
 <mat-card *ngFor="let doctor of specializationDoctors?.doctors?.content">
   <div flexLayout="row">
       <div flexLayout="column" fxFlex>
