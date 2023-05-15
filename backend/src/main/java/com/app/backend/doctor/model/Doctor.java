@@ -1,12 +1,11 @@
 package com.app.backend.doctor.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.app.backend.review.entity.Review;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,5 +24,8 @@ public class Doctor {
     private String image;
     private String details;
 
+    @OneToMany()
+    @JoinColumn(name = "doctorId ")
+    private List<Review> reviews;
 
 }

@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DoctorDetailComponent } from 'src/app/modules/doctor-detail/doctor-detail.component';
 import { SpecializationComponent } from 'src/app/modules/specialization/specialization.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +24,8 @@ import { SpecializationComponent } from 'src/app/modules/specialization/speciali
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class DefaultModule { }
