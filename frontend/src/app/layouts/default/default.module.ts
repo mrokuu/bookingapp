@@ -9,6 +9,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { DoctorDetailComponent } from 'src/app/modules/doctor-detail/doctor-detail.component';
 import { SpecializationComponent } from 'src/app/modules/specialization/specialization.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BookingComponent } from 'src/app/modules/booking/booking.component';
 
 
 
@@ -18,7 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     DoctorComponent,
     DoctorDetailComponent,
-    SpecializationComponent
+    SpecializationComponent, BookingComponent
   ],
   imports: [
     CommonModule,

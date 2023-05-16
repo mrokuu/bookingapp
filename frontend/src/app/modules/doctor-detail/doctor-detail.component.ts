@@ -26,14 +26,14 @@ export class DoctorDetailComponent {
     ) { }
 
   ngOnInit(): void {
-    this.getProductDetails();
+    this.getDoctorDetails();
     this.reviewForm = this.formBuilder.group({
       authorName: ['', [Validators.required, Validators.minLength(2)]],
       content:  ['', [Validators.required, Validators.minLength(4)]],
     });
   }
 
-  getProductDetails() {
+  getDoctorDetails() {
     let details = this.router.snapshot.params['details'];
     this.doctorDetailsService.getDoctorDetails(details)
       .subscribe(doctor => this.doctor = doctor);

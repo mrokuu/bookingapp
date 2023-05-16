@@ -8,8 +8,7 @@ import { FullpageModule } from './layouts/fullpage/fullpage.module';
 import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { AdminSpecializationUpdateComponent } from './modules/admin/admin-specialization/admin-specialization-update/admin-specialization-update.component';
-import { AdminSpecializationAddComponent } from './modules/admin/admin-specialization/admin-specialization-add/admin-specialization-add.component';
+
 
 
 

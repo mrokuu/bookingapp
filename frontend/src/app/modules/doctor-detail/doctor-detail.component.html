@@ -13,7 +13,9 @@
           <div fxLayout="row" fxFlexAlign="end">
               <span class="price">{{doctor && doctor.price}}</span>
           </div>
-          <button mat-flat-button color="primary">Click</button>
+          <div fxLayoutAlign="end start">
+            <button mat-flat-button color="primary" routerLink="/selectedDoctor" [queryParams]="{id: doctor && doctor.id}">Make an Appointment</button>
+          </div>
       </div>
   </div>
   <div class="fullDescription">

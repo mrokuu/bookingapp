@@ -21,4 +21,5 @@ public class Review {
     private Long doctorId;
     private String authorName;
     private String content;
+
 }
