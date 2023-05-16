@@ -10,7 +10,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
-
+import {MatRadioModule} from '@angular/material/radio';
 
 
 
@@ -28,7 +28,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule
   ],
   exports: [
     CommonModule,
@@ -41,7 +42,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule
   ]
 })
 export class MaterialModule { }

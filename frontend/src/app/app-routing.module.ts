@@ -16,6 +16,7 @@ import { AdminSpecializationAddComponent } from './modules/admin/admin-specializ
 import { AdminSpecializationUpdateComponent } from './modules/admin/admin-specialization/admin-specialization-update/admin-specialization-update.component';
 import { SpecializationComponent } from './modules/specialization/specialization.component';
 import { BookingComponent } from './modules/booking/booking.component';
+import { SelectedDoctorComponent } from './modules/selected-doctor/selected-doctor.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
       {path: 'doctors', component: DoctorComponent},
       {path: 'doctors/:details', component: DoctorDetailComponent},
       {path: 'specializations/:name', component: SpecializationComponent},
-      {path: 'selectedDoctor', component: BookingComponent},
+      {path: 'selectedDoctor', component: SelectedDoctorComponent},
+      {path: 'booking', component: BookingComponent},
     ]
   },
   {

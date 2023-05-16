@@ -10,6 +10,7 @@ import { DoctorDetailComponent } from 'src/app/modules/doctor-detail/doctor-deta
 import { SpecializationComponent } from 'src/app/modules/specialization/specialization.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BookingComponent } from 'src/app/modules/booking/booking.component';
+import { SelectedDoctorComponent } from 'src/app/modules/selected-doctor/selected-doctor.component';
 
 
 
@@ -19,7 +20,9 @@ import { BookingComponent } from 'src/app/modules/booking/booking.component';
     HomeComponent,
     DoctorComponent,
     DoctorDetailComponent,
-    SpecializationComponent, BookingComponent
+    SpecializationComponent,
+    BookingComponent,
+    SelectedDoctorComponent
   ],
   imports: [
     CommonModule,

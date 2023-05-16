@@ -19,7 +19,7 @@ import { FormGroup } from "@angular/forms";
   <mat-form-field appearance="fill">
       <mat-label>Specialization</mat-label>
       <input matInput placeholder="Enter specializaiont" formControlName="specialization">
-      
+
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -29,7 +29,7 @@ import { FormGroup } from "@angular/forms";
 
 
   <div fxLayout="colum" fxFlexAlign="end" fxLayoutGap="10">
-      <button mat-flat-button color="primary">Zapisz</button>
+      <button mat-flat-button color="primary">Save</button>
   </div>
 </form>
 </div>`,

@@ -22,4 +22,8 @@ public class DoctorService {
 
         return doctorRepository.findById(id).orElseThrow();
     }
+
+//    public Doctor getSelectedDoctor(Long id) {
+//        return doctorRepository.findById(id).orElseThrow();
+//    }
 }

@@ -7,7 +7,7 @@ import { FormGroup } from "@angular/forms";
     <div [formGroup]="parentForm" fxLayout="column">
         <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
-            <input matInput placeholder="Podaj nazwę produktu" formControlName="name">
+            <input matInput placeholder="Enter name" formControlName="name">
             <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="erroMessages">
                 <div *ngIf="name?.errors?.['required']">
                     Name is required

@@ -44,4 +44,11 @@ public class DoctorController {
         return doctorService.getDoctorByDetails(id);
 }
 
+
+//    @GetMapping("/selectedDoctor/{id}")
+//    public Doctor getSelectedDoctor(@PathVariable Long id){
+//        return doctorService.getSelectedDoctor(id);
+//    }
+
+
 }

@@ -1,0 +1,24 @@
+<div fxLayout="column">
+  <div fxLayout="row" fxFlex fxLayoutGap="20">
+      <div>
+          <img *ngIf="!doctor?.image" src="../../../assets/doctor.jpeg" width="350">
+      </div>
+      <div fxLayout="column" fxFlex>
+          <div fxLayout="row" >
+              <span class="price">Visit to the doctor: {{doctor && doctor.name}}</span>
+          </div>
+        <div fxLayout="row" >
+          <span class="price">Price per visit: {{doctor && doctor.price}}</span>
+      </div>
+      <div fxLayout="row" >
+        <span class="price">Date of the visit:</span>
+    </div>
+    <div fxLayout="row" >
+      <span class="price">Visit time:</span>
+  </div>
+          <div fxLayoutAlign="end start">
+            <button mat-flat-button color="primary" routerLink="/booking" [queryParams]="{id: doctor && doctor.id}">Confirm</button>
+          </div>
+      </div>
+  </div>
+</div>
