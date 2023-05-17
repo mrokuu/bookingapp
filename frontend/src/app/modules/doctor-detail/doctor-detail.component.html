@@ -14,7 +14,7 @@
               <span class="price">{{doctor && doctor.price}}</span>
           </div>
           <div fxLayoutAlign="end start">
-            <button mat-flat-button color="primary" routerLink="/selectedDoctor" [queryParams]="{id: doctor && doctor.id}">Make an Appointment</button>
+            <button mat-flat-button color="primary" routerLink="/booking" [queryParams]="{id: doctor && doctor.id}">Make an Appointment</button>
           </div>
       </div>
   </div>
@@ -52,7 +52,7 @@
           </div>
       </mat-form-field>
       <div fxLayout="colum" fxFlexAlign="end" fxLayoutGap="10">
-          <button mat-flat-button color="primary" [disabled]="!reviewForm.valid">Zapisz</button>
+          <button mat-flat-button color="primary" [disabled]="!reviewForm.valid">Save</button>
       </div>
   </form>
 </div>

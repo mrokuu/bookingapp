@@ -19,8 +19,8 @@ export class BookingService {
   }
 
 
-  bookVisit(client: ClientDto): Observable<VisitSummary>{
-    return this.http.post<VisitSummary>("/api/booking/", client);
+  bookVisit(client: ClientDto, id: number): Observable<VisitSummary>{
+    return this.http.post<VisitSummary>(`/api/booking/${id}`, client);
   }
 
 }

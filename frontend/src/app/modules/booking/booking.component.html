@@ -1,3 +1,12 @@
+<div *ngIf="visitSummary" class="orderSummary">
+  <div>Your visit has been booked</div>
+  <div>Date of booking: {{visitSummary.placeDate | date: 'yyyy-MM-dd HH:mm'}}</div>
+  <div>To pay: {{visitSummary.grossValue}} $</div>
+
+  </div>
+
+
+<div *ngIf="!visitSummary ">
 <form [formGroup]="formGrup" (submit)="submit()">
   <div fxLayout="column" class="orderForm">
       <mat-form-field appearance="fill">
@@ -79,17 +88,17 @@
               <div class="card-row">
                   <div fxLayout="row" fxLayoutAlign="space-between start">
                       <div class="cart-col-1">
-                          <a routerLink="{{'/doctors/' + doctor?.id}}">
+                          <a routerLink="{{'/doctors/' + doctor && doctor.id}}">
                               <img *ngIf="!doctor?.image" src="../../../assets/doctor.jpeg" width="100">
                           </a>
                       </div>
-                      <div class="cart-col-2">{{doctor?.name}}</div>
-                      <div class="cart-col-3">{{doctor?.price}}</div>
+                      <div class="cart-col-2">{{doctor && doctor.name}}</div>
+                      <div class="cart-col-3">{{doctor && doctor.price}}</div>
                   </div>
               </div>
               <div fxLayoutAlign="end start">
                   <div class="summary"> Wartość: </div>
-                  <div class="summary"> <b>{{doctor?.price}}</b></div>
+                  <div class="summary"> <b>{{doctor && doctor.price}}</b></div>
               </div>
               <div>
                   <h2>Dostawa</h2>
@@ -118,3 +127,4 @@
       </div>
   </div>
 </form>
+</div>

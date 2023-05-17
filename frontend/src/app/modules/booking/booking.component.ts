@@ -21,6 +21,7 @@ export class BookingComponent {
   formGrup!: FormGroup;
   initData!: InitData;
   visitSummary!: VisitSummary;
+  clientDto!: ClientDto;
 
 
   constructor(
@@ -35,19 +36,19 @@ export class BookingComponent {
     ngOnInit(): void {
 
       this.formGrup = this.formBuilder.group({
-        firstname: ['', Validators.required],
-        lastname: ['', Validators.required],
-        street: ['', Validators.required],
-        zipcode: ['', Validators.required],
-        city: ['', Validators.required],
-        email: ['', [Validators.required, Validators.email]],
-        phone: ['', Validators.required],
-        shipment: ['', Validators.required],
-        payment:  ['', Validators.required]
+        firstname: [''],
+        lastname: [''],
+        street: [''],
+        zipcode: [''],
+        city: [''],
+        email: [''],
+        phone: [''],
+        shipment: [''],
+        payment:  ['']
       });
       this.getId()
       this.getSelectedDoctor()
-      
+      console.log(this.id);
     }
 
 
@@ -77,9 +78,9 @@ export class BookingComponent {
           email: this.formGrup.get('email')?.value,
           phone: this.formGrup.get('phone')?.value,
           doctorId: this.id,
-          shipmentId: Number(this.formGrup.get('shipment')?.value.id),
-          paymentId:  Number(this.formGrup.get('payment')?.value.id),
-        } as ClientDto)
+          // shipmentId: Number(this.formGrup.get('shipment')?.value.id),
+          // paymentId:  Number(this.formGrup.get('payment')?.value.id),
+        } as ClientDto, this.id)
           .subscribe({
             next: visitSummary => {
               this.visitSummary = visitSummary;
@@ -124,5 +125,8 @@ export class BookingComponent {
     get shipment(){
       return this.formGrup.get("shipment");
     }
+
+
+
 
 }
