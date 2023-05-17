@@ -5,9 +5,11 @@ import com.app.backend.common.model.Review;
 import com.app.backend.common.repository.DoctorRepository;
 import com.app.backend.visit.dto.VisitDto;
 import com.app.backend.visit.dto.VisitSummary;
+import com.app.backend.visit.model.Payment;
 import com.app.backend.visit.model.Visit;
 import com.app.backend.visit.model.VisitRow;
 import com.app.backend.visit.model.VisitStatus;
+import com.app.backend.visit.repository.PaymentRepository;
 import com.app.backend.visit.repository.VisitRepository;
 import com.app.backend.visit.repository.VisitRowRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,9 +24,17 @@ public class VisitService {
     private final VisitRepository visitRepository;
     private final DoctorRepository doctorRepository;
     private final VisitRowRepository visitRowRepository;
+
+    private final PaymentRepository paymentRepository;
+
+
+
+
     @Transactional
     public VisitSummary bookVisit(VisitDto visitDto) {
         Doctor doctor = doctorRepository.findById(visitDto.getDoctorId()).orElseThrow();
+        Payment payment = paymentRepository.findById(visitDto.getPaymentId()).orElseThrow();
+
         Visit visit = Visit.builder()
                 .firstname(visitDto.getFirstname())
                 .lastname(visitDto.getLastname())
@@ -36,6 +46,7 @@ public class VisitService {
                 .placeDate(LocalDateTime.now())
                 .visitStatus(VisitStatus.NEW)
                 .grossValue(doctor.getPrice())
+                .payment(payment)
                 .build();
         Visit newVisit = visitRepository.save(visit);
         saveVisitRows(doctor, newVisit.getId());
@@ -44,6 +55,7 @@ public class VisitService {
                 .placeDate(newVisit.getPlaceDate())
                 .status(newVisit.getVisitStatus())
                 .grossValue(doctor.getPrice())
+                .payment(payment)
                 .build();
     }
 

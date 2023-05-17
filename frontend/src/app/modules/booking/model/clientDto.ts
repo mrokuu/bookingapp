@@ -7,6 +7,5 @@ export interface ClientDto{
   email: string,
   phone: string,
   doctorId: number,
-  shipmentId: number,
   paymentId:  number
 }

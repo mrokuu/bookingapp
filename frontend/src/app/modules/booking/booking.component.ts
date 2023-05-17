@@ -6,7 +6,8 @@ import { BookingService } from './booking.service';
 import { InitData } from './model/initData';
 import { ClientDto } from './model/clientDto';
 import { VisitSummary } from './model/visitSummary';
-// import { CookieService } from 'ngx-cookie-service';
+
+
 
 @Component({
   selector: 'app-booking',
@@ -43,12 +44,11 @@ export class BookingComponent {
         city: [''],
         email: [''],
         phone: [''],
-        shipment: [''],
         payment:  ['']
       });
       this.getId()
       this.getSelectedDoctor()
-      console.log(this.id);
+      this.getinitData();
     }
 
 
@@ -78,8 +78,7 @@ export class BookingComponent {
           email: this.formGrup.get('email')?.value,
           phone: this.formGrup.get('phone')?.value,
           doctorId: this.id,
-          // shipmentId: Number(this.formGrup.get('shipment')?.value.id),
-          // paymentId:  Number(this.formGrup.get('payment')?.value.id),
+          paymentId:  Number(this.formGrup.get('payment')?.value.id),
         } as ClientDto, this.id)
           .subscribe({
             next: visitSummary => {
@@ -92,6 +91,21 @@ export class BookingComponent {
     }
 
 
+
+
+    setDefaultPayment() {
+      this.formGrup.patchValue({"payment": this.initData.payment
+        .filter(payment => payment.defaultPayment === true)[0]
+      });
+    }
+
+    getinitData(){
+      this.bookingService.getInitData()
+        .subscribe(initData => {
+          this.initData = initData;
+          this.setDefaultPayment();
+        })
+    }
 
 
     get firstname(){

@@ -27,4 +27,6 @@ public class VisitDto {
     private String phone;
     @NotNull
     private Long doctorId;
+    @NotNull
+    private Long paymentId;
 }

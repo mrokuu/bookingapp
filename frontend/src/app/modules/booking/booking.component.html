@@ -2,6 +2,10 @@
   <div>Your visit has been booked</div>
   <div>Date of booking: {{visitSummary.placeDate | date: 'yyyy-MM-dd HH:mm'}}</div>
   <div>To pay: {{visitSummary.grossValue}} $</div>
+  <div *ngIf="visitSummary.payment.note">Płatność:
+    <br>
+    <span class="paymentNote" [innerHTML]="visitSummary.payment.note | replace: '\n': '\<br>'"></span></div>
+
 
   </div>
 
@@ -88,7 +92,7 @@
               <div class="card-row">
                   <div fxLayout="row" fxLayoutAlign="space-between start">
                       <div class="cart-col-1">
-                          <a routerLink="{{'/doctors/' + doctor && doctor.id}}">
+                          <a routerLink="{{'/doctors/' + doctor?.id}}">
                               <img *ngIf="!doctor?.image" src="../../../assets/doctor.jpeg" width="100">
                           </a>
                       </div>
@@ -100,18 +104,9 @@
                   <div class="summary"> Wartość: </div>
                   <div class="summary"> <b>{{doctor && doctor.price}}</b></div>
               </div>
+
               <div>
-                  <h2>Dostawa</h2>
-                  <mat-radio-group fxLayout="column" formControlName="shipment">
-                      <mat-radio-button class="shipmentRadioButton" *ngFor="let shipment of initData?.shipment"
-                          [value]="shipment" [checked]="shipment.defaultShipment">
-                          <span class="shipment-1">{{shipment.name}}</span>
-                          <span class="shipment-2">{{shipment.price}} PLN</span>
-                      </mat-radio-button>
-                  </mat-radio-group>
-              </div>
-              <div>
-                  <h2>Płatność</h2>
+                  <h2>Payment</h2>
                   <mat-radio-group fxLayout="column" formControlName="payment">
                       <mat-radio-button class="paymentRadioButton" *ngFor="let payment of initData?.payment"
                           [value]="payment" [checked]="payment.defaultPayment">{{payment.name}}</mat-radio-button>

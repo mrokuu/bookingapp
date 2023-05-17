@@ -1,5 +1,6 @@
 package com.app.backend.visit.dto;
 
+import com.app.backend.visit.model.Payment;
 import com.app.backend.visit.model.VisitStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,4 +20,5 @@ public class VisitSummary {
     private LocalDateTime placeDate;
     private VisitStatus status;
     private BigDecimal grossValue;
+    private Payment payment;
 }

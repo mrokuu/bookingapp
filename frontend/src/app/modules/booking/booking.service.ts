@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Doctor } from '../common/doctor';
 import { VisitSummary } from './model/visitSummary';
 import { ClientDto } from './model/clientDto';
+import { InitData } from './model/initData';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,11 @@ export class BookingService {
 
   bookVisit(client: ClientDto, id: number): Observable<VisitSummary>{
     return this.http.post<VisitSummary>(`/api/booking/${id}`, client);
+  }
+
+
+  getInitData(): Observable<InitData> {
+    return this.http.get<InitData>(`/api/booking/initData`);
   }
 
 }

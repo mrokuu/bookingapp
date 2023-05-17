@@ -5,5 +5,5 @@ export interface VisitSummary{
     placeDate: Date,
     status: string,
     grossValue: number,
-    // payment: Payment
+    payment: Payment
 }

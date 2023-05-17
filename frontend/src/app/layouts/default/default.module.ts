@@ -11,6 +11,7 @@ import { SpecializationComponent } from 'src/app/modules/specialization/speciali
 import { ReactiveFormsModule } from '@angular/forms';
 import { BookingComponent } from 'src/app/modules/booking/booking.component';
 import { SelectedDoctorComponent } from 'src/app/modules/selected-doctor/selected-doctor.component';
+import { ReplacePipe } from 'src/app/modules/common/pipe/preplacePipe';
 
 
 
@@ -22,7 +23,8 @@ import { SelectedDoctorComponent } from 'src/app/modules/selected-doctor/selecte
     DoctorDetailComponent,
     SpecializationComponent,
     BookingComponent,
-    SelectedDoctorComponent
+    SelectedDoctorComponent,
+    ReplacePipe
   ],
   imports: [
     CommonModule,
