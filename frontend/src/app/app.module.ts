@@ -8,7 +8,8 @@ import { FullpageModule } from './layouts/fullpage/fullpage.module';
 import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { SelectedDoctorComponent } from './modules/selected-doctor/selected-doctor.component';
+import { AdminVisitComponent } from './modules/admin/admin-visit/admin-visit.component';
+
 
 
 
@@ -16,7 +17,7 @@ import { SelectedDoctorComponent } from './modules/selected-doctor/selected-doct
 @NgModule({
   declarations: [
     AppComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

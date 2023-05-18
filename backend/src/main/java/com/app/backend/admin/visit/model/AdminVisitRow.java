@@ -1,20 +1,20 @@
-package com.app.backend.visit.model;
+package com.app.backend.admin.visit.model;
 
+import com.app.backend.admin.doctor.dto.AdminDoctorDto;
+import com.app.backend.admin.doctor.model.AdminDoctor;
+import com.app.backend.common.dto.DoctorDto;
 import com.app.backend.common.model.Doctor;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
+@Table(name = "visit_row")
 @Getter
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class VisitRow {
+public class AdminVisitRow {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,5 +22,7 @@ public class VisitRow {
     private Long visitId;
     private Long doctorId;
     private BigDecimal price;
+
+
 
 }

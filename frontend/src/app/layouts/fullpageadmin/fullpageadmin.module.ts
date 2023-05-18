@@ -17,6 +17,8 @@ import { AdminSpecializationComponent } from 'src/app/modules/admin/admin-specia
 import { AdminSpecializationUpdateComponent } from 'src/app/modules/admin/admin-specialization/admin-specialization-update/admin-specialization-update.component';
 import { AdminSpecializationAddComponent } from 'src/app/modules/admin/admin-specialization/admin-specialization-add/admin-specialization-add.component';
 import { AdminSpecializationFormConponent } from 'src/app/modules/admin/admin-specialization/admin-specialization-form/admin-specialization-form';
+import { AdminVisitUpdateComponent } from 'src/app/modules/admin/admin-visit/admin-visit-update/admin-visit-update.component';
+import { AdminVisitComponent } from 'src/app/modules/admin/admin-visit/admin-visit.component';
 
 
 
@@ -34,7 +36,10 @@ import { AdminSpecializationFormConponent } from 'src/app/modules/admin/admin-sp
     AdminSpecializationComponent,
     AdminSpecializationUpdateComponent,
     AdminSpecializationAddComponent,
-    AdminSpecializationFormConponent
+    AdminSpecializationFormConponent,
+    AdminVisitUpdateComponent,
+    AdminVisitComponent
+
   ],
   imports: [
     CommonModule,

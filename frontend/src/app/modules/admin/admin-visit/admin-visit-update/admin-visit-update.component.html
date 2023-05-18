@@ -1,0 +1,40 @@
+<h1>Edit Visit </h1>
+<div>
+    <h2>Order details</h2>
+    id: {{visit && visit.id}}
+    <br /><br />
+    Order number: {{visit && visit.placeDate | date : 'yyyy-MM-dd HH:mm'}}<br />
+    Płatność: {{visit && visit.payment.name}}<br /><br />
+
+    <form fxLayaout="row" fxLayoutAlign="space-between start">
+        <div>Status: {{visit && visit.visitStatus}}</div>
+        <button mat-flat-button color="primary">Zapisz</button>
+    </form>
+</div>
+<div>
+    <div fxLayaout="row" fxLayoutAlign="space-between start">
+        <div class="order-hcol-1">
+            Name
+        </div>
+        <div class="order-hcol-2">Quantity</div>
+        <div class="order-hcol-3">Value</div>
+    </div>
+    <div *ngFor="let row of visit?.visitRows" fxLayaout="row" fxLayoutAlign="space-between start">
+        <div class="order-col-1">
+            <span></span>
+        </div>
+    </div>
+    <div fxLayoutAlign="end end">
+        <b>Value: {{visit && visit.grossValue}}</b>
+    </div>
+</div>
+<div>
+    <h2>Customer data</h2>
+    <div>Fist Name: {{visit && visit.firstname}}</div>
+    <div>Last Name: {{visit && visit.lastname}}</div>
+    <div>Street: {{visit && visit.street}}</div>
+    <div>Zip Code: {{visit && visit.zipcode}}</div>
+    <div>City: {{visit && visit.city}}</div>
+    <div>Email: {{visit && visit.email}}</div>
+    <div>Phone: {{visit && visit.phone}}</div>
+</div>
