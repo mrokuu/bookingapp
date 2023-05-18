@@ -1,5 +1,6 @@
 package com.app.backend.visit.service;
 
+import com.app.backend.common.mail.EmailService;
 import com.app.backend.common.model.Doctor;
 import com.app.backend.common.model.Review;
 import com.app.backend.common.repository.DoctorRepository;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Service
 @RequiredArgsConstructor
@@ -26,6 +28,7 @@ public class VisitService {
     private final VisitRowRepository visitRowRepository;
 
     private final PaymentRepository paymentRepository;
+    private final EmailService emailService;
 
 
 
@@ -50,6 +53,7 @@ public class VisitService {
                 .build();
         Visit newVisit = visitRepository.save(visit);
         saveVisitRows(doctor, newVisit.getId());
+        emailService.send(visit.getEmail(), "your visit has been booked", createEmailMessage(visit));
         return VisitSummary.builder()
                 .id(newVisit.getId())
                 .placeDate(newVisit.getPlaceDate())
@@ -72,5 +76,15 @@ public class VisitService {
     public Doctor getDoctor(Long id) {
 
         return doctorRepository.findById(id).orElseThrow();
+    }
+
+
+    public String createEmailMessage(Visit visit){
+        return "Your visit at id: " + visit.getId() +
+                "\nDate: " + visit.getPlaceDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")) +
+                "\nValue: " + visit.getGrossValue() + " PLN " +
+                "\n\n" +
+                "\nPayment: " + visit.getPayment().getName() +
+                (visit.getPayment().getNote() != null ? "\n" + visit.getPayment().getNote() : "");
     }
 }
