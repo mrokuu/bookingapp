@@ -1,6 +1,7 @@
 package com.app.backend.visit.model;
 
 import com.app.backend.admin.doctor.model.AdminDoctor;
+import com.app.backend.admin.visit.model.AdminVisitDoctor;
 import com.app.backend.common.model.Doctor;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Getter

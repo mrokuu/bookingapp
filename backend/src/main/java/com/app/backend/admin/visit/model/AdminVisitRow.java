@@ -20,10 +20,16 @@ public class AdminVisitRow {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long visitId;
-    private Long doctorId;
+
+//    private Long doctorId;
     private BigDecimal price;
 
-    @OneToOne
+//    @OneToOne
+//    @JoinColumn(name = "id")
+//    private AdminVisitDoctor adminVisitDoctor;
+
+    @ManyToOne
+    @JoinColumn(name = "doctorId", referencedColumnName = "id")
     private AdminVisitDoctor adminVisitDoctor;
 
 
