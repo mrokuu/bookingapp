@@ -15,7 +15,7 @@ Backend:
 
 Frontend:
 * Run the code in the IDE
-* 
-* 
-* 
+* Run `npm install`
+* Run `npm start` for a dev server
+* Navigate to `http://localhost:4200/`
 * 
