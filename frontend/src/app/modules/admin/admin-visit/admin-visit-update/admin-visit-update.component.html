@@ -21,16 +21,17 @@
         <div class="order-hcol-1">
             Name
         </div>
-        <div class="order-hcol-2">Quantity</div>
-        <div class="order-hcol-3">Value</div>
+        <!-- <div class="order-hcol-2">Term</div> -->
+        <!-- <div class="order-hcol-3">Value</div> -->
     </div>
     <div *ngFor="let row of visit?.visitRows" fxLayaout="row" fxLayoutAlign="space-between start">
         <div class="order-col-1">
             <span>{{row.adminVisitDoctor.name}}</span>
         </div>
     </div>
-    <div fxLayoutAlign="end end">
-        <b>Value: {{visit && visit.grossValue}}</b>
+    <div>Term: </div>
+    <div>
+        <p>Value: {{visit && visit.grossValue}}</p>
     </div>
 </div>
 <div>
