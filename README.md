@@ -6,6 +6,14 @@
 _____
 Download project <code> git clone https://github.com/mrokuu/bookingapp </code>:
 
+Backend:
+* 
+* 
+* 
+* 
+* 
+
+Frontend:
 * 
 * 
 * 
