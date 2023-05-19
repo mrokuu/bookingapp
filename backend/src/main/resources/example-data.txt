@@ -1,0 +1,30 @@
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. John Smith', 1, 'Experienced cardiologist', 150, null, 'Cardiology specialist with 10+ years of experience. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. Sarah Johnson', 1, 'Board-certified heart specialist', 200, null, 'Specializes in treating cardiovascular diseases. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. Michael Thompson', 1, 'Expert in cardiac care', 180, null, 'Skilled in diagnosing and treating heart conditions. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. Emily Davis', 1, 'Cardiovascular surgeon', 250, null, 'Performs heart surgeries with high success rates. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. Robert Anderson', 1, 'Interventional cardiology specialist', 190, null, 'Uses minimally invasive techniques for heart treatments. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. Jennifer Wilson', 1, 'Pediatric cardiologist', 170, null, 'Provides specialized heart care for children. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. David Roberts', 1, 'Heart failure specialist', 200, null, 'Focuses on managing heart failure and improving quality of life. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. Jessica Adams', 1, 'Electrophysiologist', 220, null, 'Expert in diagnosing and treating heart rhythm disorders. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. Christopher Brown', 1, 'Cardiac rehabilitation specialist', 180, null, 'Helps patients recover after heart-related procedures. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. Amanda Clark', 1, 'Heart imaging specialist', 190, null, 'Utilizes advanced imaging techniques for heart diagnosis. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. William Turner', 1, 'Cardiothoracic surgeon', 250, null, 'Performs surgical procedures on the heart and chest. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. Samantha White', 1, 'Heart transplant specialist', 230, null, 'Expert in heart transplantation and post-operative care. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. Matthew Evans', 1, 'Intensive care cardiologist', 210, null, 'Manages critical heart patients in the ICU. Greate doctor.');
+INSERT INTO doctor (name, specialization_id, description, price, image, details)
+VALUES ('Dr. Olivia Taylor', 1, 'Cardiovascular researcher', 180, null, 'Conducts research on heart-related diseases and treatments. Greate doctor.');
+
+

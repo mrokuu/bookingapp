@@ -1,5 +1,6 @@
 package com.app.backend.visit.model;
 
+import com.app.backend.common.model.Doctor;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -42,4 +43,5 @@ public class Visit {
     private String phone;
     @OneToOne
     private Payment payment;
+
 }

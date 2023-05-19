@@ -1,5 +1,6 @@
 package com.app.backend.admin.visit.model;
 
+import com.app.backend.admin.doctor.model.AdminDoctor;
 import com.app.backend.common.model.Doctor;
 import com.app.backend.visit.model.VisitRow;
 import jakarta.persistence.*;

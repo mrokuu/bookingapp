@@ -1,6 +1,5 @@
 package com.app.backend.admin.visit.controller;
 
-import com.app.backend.admin.doctor.model.AdminDoctor;
 import com.app.backend.admin.visit.dto.AdminVisitDto;
 import com.app.backend.admin.visit.mapper.AdminVisitMapper;
 import com.app.backend.admin.visit.model.AdminVisit;

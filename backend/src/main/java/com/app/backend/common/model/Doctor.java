@@ -1,8 +1,10 @@
 package com.app.backend.common.model;
 
+import com.app.backend.admin.visit.model.AdminVisitRow;
 import jakarta.persistence.*;
 import lombok.*;
 
+import javax.print.Doc;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -27,5 +29,6 @@ public class Doctor {
     @OneToMany()
     @JoinColumn(name = "doctorId ")
     private List<Review> reviews;
+
 
 }

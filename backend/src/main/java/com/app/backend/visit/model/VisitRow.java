@@ -1,5 +1,6 @@
 package com.app.backend.visit.model;
 
+import com.app.backend.admin.doctor.model.AdminDoctor;
 import com.app.backend.common.model.Doctor;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,5 +23,8 @@ public class VisitRow {
     private Long visitId;
     private Long doctorId;
     private BigDecimal price;
+
+
+   
 
 }

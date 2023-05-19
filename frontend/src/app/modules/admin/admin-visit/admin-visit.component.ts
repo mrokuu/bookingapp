@@ -34,6 +34,8 @@ export class AdminVisitComponent {
         return data.content;
       })
     ).subscribe(data => this.data = data);
+
+    
   }
 
 
