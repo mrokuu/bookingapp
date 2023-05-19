@@ -21,4 +21,12 @@ export class AdminVisitService {
   getVisit(id: number): Observable<AdminVisit> {
     return this.http.get<AdminVisit>("/api/admin/visits/" + id);
   }
+
+  saveStatus(id: number, value: any): Observable<void> {
+    return this.http.patch<void>("/api/admin/visits/" + id, value);
+  }
+
+  getInitData(): Observable<any> {
+    return this.http.get<any>("/api/admin/visits/initData");
+  }
 }

@@ -12,9 +12,10 @@ import { map, startWith, switchMap } from 'rxjs';
 export class AdminVisitComponent {
 
 
-  displayedColumns: string[] = ["id", "placeDate", "orderStatus", "grossValue", "actions"];
+  displayedColumns: string[] = ["id", "placeDate", "grossValue", "actions"];
   totalElements: number = 0;
   data: Array<AdminVisit> = [];
+  statuses!: Map<string, string>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -35,7 +36,16 @@ export class AdminVisitComponent {
       })
     ).subscribe(data => this.data = data);
 
-    
+  }
+
+
+  getInitData(){
+    this.adminVisitService.getInitData()
+      .subscribe(data => this.statuses = new Map(Object.entries(data.orderStatuses)));
+  }
+
+  resolveStatus(status: string){
+    return this.statuses?.get(status);
   }
 
 

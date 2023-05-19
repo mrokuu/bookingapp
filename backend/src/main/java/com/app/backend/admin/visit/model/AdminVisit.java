@@ -5,6 +5,7 @@ import com.app.backend.common.model.Doctor;
 import com.app.backend.visit.model.VisitRow;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.print.Doc;
 import java.math.BigDecimal;
@@ -14,6 +15,7 @@ import java.util.List;
 @Entity
 @Table(name = "visit")
 @Getter
+@Setter
 public class AdminVisit {
 
     @Id
