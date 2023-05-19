@@ -7,5 +7,5 @@ export interface AdminVisitRow{
     visitId: number,
     doctorId:number,
     price: number,
-    doctor: Doctor
+    adminVisitDoctor: AdminDoctorDto
 }

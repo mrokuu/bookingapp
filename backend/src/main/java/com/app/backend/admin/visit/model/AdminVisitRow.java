@@ -23,5 +23,8 @@ public class AdminVisitRow {
     private Long doctorId;
     private BigDecimal price;
 
+    @OneToOne
+    private AdminVisitDoctor adminVisitDoctor;
+
 
 }

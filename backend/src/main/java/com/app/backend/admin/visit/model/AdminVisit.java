@@ -6,6 +6,7 @@ import com.app.backend.visit.model.VisitRow;
 import jakarta.persistence.*;
 import lombok.Getter;
 
+import javax.print.Doc;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -26,6 +27,8 @@ public class AdminVisit {
     @OneToMany
     @JoinColumn(name = "visitId")
     private List<AdminVisitRow> visitRows;
+
+
     @Column(name = "gross_value")
     private BigDecimal grossValue;
     private String firstname;

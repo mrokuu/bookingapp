@@ -21,7 +21,7 @@
     </div>
     <div *ngFor="let row of visit?.visitRows" fxLayaout="row" fxLayoutAlign="space-between start">
         <div class="order-col-1">
-            <span></span>
+            <span>{{row.adminVisitDoctor.name}}</span>
         </div>
     </div>
     <div fxLayoutAlign="end end">

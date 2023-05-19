@@ -22,3 +22,5 @@ create table visit_row(
                           constraint fk_visit_row_visit_id foreign key (visit_id) references visit(id),
                           constraint fk_visit_row_doctor_id foreign key (doctor_id) references doctor(id)
 );
+
+
