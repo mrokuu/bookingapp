@@ -1,8 +1,12 @@
 package com.app.backend.admin.visit.service;
 
+import com.app.backend.admin.doctor.repository.AdminDoctorRepository;
+import com.app.backend.admin.visit.dto.AdminVisitDto;
 import com.app.backend.admin.visit.model.AdminVisit;
 import com.app.backend.admin.visit.repository.AdminVisitRepository;
+import com.app.backend.common.model.Doctor;
 import com.app.backend.common.repository.DoctorRepository;
+import com.app.backend.visit.dto.VisitDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -27,7 +31,8 @@ public class AdminVisitService {
     }
 
 
-    public AdminVisit getOrder(Long id) {
+    public AdminVisit getVisit(Long id) {
+
         return adminVisitRepository.findById(id).orElseThrow();
     }
 }

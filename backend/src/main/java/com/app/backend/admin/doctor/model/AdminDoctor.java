@@ -1,9 +1,12 @@
 package com.app.backend.admin.doctor.model;
 
+import com.app.backend.admin.visit.model.AdminVisit;
+import com.app.backend.admin.visit.model.AdminVisitRow;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Getter
@@ -23,5 +26,6 @@ public class AdminDoctor {
     private BigDecimal price;
     private String image;
     private String details;
+    
 
 }

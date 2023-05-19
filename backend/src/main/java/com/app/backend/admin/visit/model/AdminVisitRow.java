@@ -20,7 +20,7 @@ public class AdminVisitRow {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long visitId;
-//    private Long doctorId;
+    private Long doctorId;
     private BigDecimal price;
 
 
