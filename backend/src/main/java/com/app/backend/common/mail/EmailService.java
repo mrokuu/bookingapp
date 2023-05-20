@@ -15,7 +15,7 @@ public class EmailService {
     @Async
     public void send(String to, String subject, String msg){
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("BookingApp <adammroczkowski00@outlook.com>");
+        message.setFrom("BookingApp <spring.adamtst@outlook.com>");
         message.setTo(to);
         message.setSubject(subject);
         message.setText(msg);
