@@ -1,5 +1,11 @@
 # bookingapp
 
+App for scheduling doctor appointments.
+
+
+#  Technologies
+* Spring Boot, Angular, TypeScript, Mysql
+
 
 #  Installation
 
