@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { DoctorDetails } from '../doctor-detail/model/doctorDetails';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Doctor } from '../common/doctor';
 import { VisitSummary } from './model/visitSummary';
 import { ClientDto } from './model/clientDto';
 import { InitData } from './model/initData';
+import { Doctor } from '../admin/common/doctor';
 
 @Injectable({
   providedIn: 'root'

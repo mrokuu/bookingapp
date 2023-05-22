@@ -19,6 +19,9 @@ import { BookingComponent } from './modules/booking/booking.component';
 import { SelectedDoctorComponent } from './modules/selected-doctor/selected-doctor.component';
 import { AdminVisitUpdateComponent } from './modules/admin/admin-visit/admin-visit-update/admin-visit-update.component';
 import { AdminVisitComponent } from './modules/admin/admin-visit/admin-visit.component';
+import { FullpageadminemptyComponent } from './layouts/fullpageadminempty/fullpageadminempty.component';
+import { AdminLoginComponent } from './modules/admin/admin-login/admin-login.component';
+import { AdminAuthorizeGuard } from './modules/admin/common/guard/adminAuthorizeGuard';
 
 const routes: Routes = [
   {
@@ -38,15 +41,20 @@ const routes: Routes = [
   },
   {
     path:'', component: FullpageadminComponent, children: [
-      {path: 'admin', component: AdminComponent},
-      {path: 'admin/doctors', component: AdminDoctorComponent},
-      {path: 'admin/doctors/update/:id', component: AdminDoctorUpdateComponent},
-      {path: 'admin/doctors/add', component: AdminDoctorAddComponent},
-      {path: 'admin/specialization', component: AdminSpecializationComponent},
-      {path: 'admin/specialization/add', component: AdminSpecializationAddComponent},
-      {path: 'admin/specialization/update/:id', component: AdminSpecializationUpdateComponent},
-      {path: 'admin/visits', component: AdminVisitComponent},
-      {path: 'admin/visits/update/:id', component: AdminVisitUpdateComponent},
+      {path: 'admin', component: AdminComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/doctors', component: AdminDoctorComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/doctors/update/:id', component: AdminDoctorUpdateComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/doctors/add', component: AdminDoctorAddComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/specialization', component: AdminSpecializationComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/specialization/add', component: AdminSpecializationAddComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/specialization/update/:id', component: AdminSpecializationUpdateComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/visits', component: AdminVisitComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/visits/update/:id', component: AdminVisitUpdateComponent, canActivate: [AdminAuthorizeGuard]},
+    ]
+  },
+  {
+    path:'', component: FullpageadminemptyComponent, children: [
+      {path: 'admin/login', component: AdminLoginComponent}
     ]
   }
 ];

@@ -1,4 +1,3 @@
-import { Doctor } from "src/app/modules/common/doctor";
 import { AdminDoctorDto } from "./adminDoctor";
 
 

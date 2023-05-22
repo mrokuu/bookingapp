@@ -19,6 +19,7 @@ import { AdminSpecializationAddComponent } from 'src/app/modules/admin/admin-spe
 import { AdminSpecializationFormConponent } from 'src/app/modules/admin/admin-specialization/admin-specialization-form/admin-specialization-form';
 import { AdminVisitUpdateComponent } from 'src/app/modules/admin/admin-visit/admin-visit-update/admin-visit-update.component';
 import { AdminVisitComponent } from 'src/app/modules/admin/admin-visit/admin-visit.component';
+import { AdminLoginComponent } from 'src/app/modules/admin/admin-login/admin-login.component';
 
 
 

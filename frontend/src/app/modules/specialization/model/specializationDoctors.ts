@@ -1,5 +1,6 @@
-import { Page } from "../../common/page";
-import { Doctor } from "../../common/doctor";
+
+import { Doctor } from "../../admin/common/doctor";
+import { Page } from "../../admin/common/page";
 import { Specialization } from "./specialization";
 
 

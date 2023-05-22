@@ -1,4 +1,4 @@
-import { Review } from "../doctor-detail/model/review";
+import { Review } from "../../doctor-detail/model/review";
 
 export interface Doctor{
   id:number,

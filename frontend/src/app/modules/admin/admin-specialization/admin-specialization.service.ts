@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { AdminSpecializationDto } from '../../common/AdminSpecializationDto';
 import { AdminSpecialization } from './model/AdminSpecialization';
+import { AdminSpecializationDto } from '../common/AdminSpecializationDto';
 
 @Injectable({
   providedIn: 'root'

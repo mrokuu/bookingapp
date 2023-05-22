@@ -1,4 +1,4 @@
-import { Doctor } from "../../common/doctor";
+import { Doctor } from "../../admin/common/doctor";
 
 
 export interface Specialization{

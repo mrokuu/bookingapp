@@ -1,4 +1,4 @@
-import { Doctor } from "src/app/modules/common/doctor"
+import { Doctor } from "../../common/doctor"
 import { AdminPayment } from "./adminPayment"
 import { AdminVisitRow } from "./adminVisitRow"
 

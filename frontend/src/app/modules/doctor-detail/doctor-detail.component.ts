@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { DoctorDetails } from './model/doctorDetails';
 import { ActivatedRoute } from '@angular/router';
 import { DoctorDetailService } from './doctor-detail.service';
-import { Doctor } from '../common/doctor';
 import { Review } from './model/review';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Doctor } from '../admin/common/doctor';
 
 @Component({
   selector: 'app-doctor-detail',

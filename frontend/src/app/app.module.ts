@@ -7,8 +7,12 @@ import { DefaultModule } from './layouts/default/default.module';
 import { FullpageModule } from './layouts/fullpage/fullpage.module';
 import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
-import { AdminVisitComponent } from './modules/admin/admin-visit/admin-visit.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FullpageadminemptyModule } from './layouts/fullpageadminempty/fullpageadminempty.module';
+import { JwtInterceptor } from './modules/common/interceptor/jwt.interceptor';
+import { AdminAuthorizeGuard } from './modules/admin/common/guard/adminAuthorizeGuard';
+import { CookieService } from 'ngx-cookie-service';
+import { ProfileAuthorizeGuard } from './modules/common/guard/profileAuthorizeGuard';
 
 
 
@@ -24,10 +28,16 @@ import { AdminVisitComponent } from './modules/admin/admin-visit/admin-visit.com
     DefaultModule,
     FullpageModule,
     FullpageadminModule,
+    FullpageadminemptyModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CookieService,
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    AdminAuthorizeGuard,
+    ProfileAuthorizeGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

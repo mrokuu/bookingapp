@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { AdminSpecializationService } from './admin-specialization.service';
 import { MatTable } from '@angular/material/table';
-import { AdminSpecializationDto } from '../../common/AdminSpecializationDto';
 import { AdminConfirmationService } from '../admin-confirmation.service';
+import { AdminSpecializationDto } from '../common/AdminSpecializationDto';
 
 @Component({
   selector: 'app-admin-specialization',

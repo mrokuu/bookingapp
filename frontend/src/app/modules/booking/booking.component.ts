@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Doctor } from '../common/doctor';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookingService } from './booking.service';
 import { InitData } from './model/initData';
 import { ClientDto } from './model/clientDto';
 import { VisitSummary } from './model/visitSummary';
+import { Doctor } from '../admin/common/doctor';
 
 
 

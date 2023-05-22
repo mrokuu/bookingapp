@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Doctor } from '../common/doctor';
 import { ActivatedRoute } from '@angular/router';
 import { BookingService } from '../booking/booking.service';
 import { FormBuilder } from '@angular/forms';
 import { SelectedDoctorService } from './selected-doctor.service';
+import { Doctor } from '../admin/common/doctor';
 
 @Component({
   selector: 'app-selected-doctor',
