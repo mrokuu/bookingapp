@@ -45,7 +45,7 @@ public class Visit {
     @OneToOne
     private Payment payment;
 
-
+    private Long userId;
 
 
 

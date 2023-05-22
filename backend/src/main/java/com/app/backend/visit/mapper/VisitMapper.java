@@ -30,7 +30,7 @@ public class VisitMapper {
 
 
 
-    public static Visit createNewVisit(VisitDto visitDto, Doctor doctor, Payment payment) {
+    public static Visit createNewVisit(VisitDto visitDto, Doctor doctor, Payment payment, Long userId) {
         return Visit.builder()
                 .firstname(visitDto.getFirstname())
                 .lastname(visitDto.getLastname())
@@ -43,6 +43,7 @@ public class VisitMapper {
                 .visitStatus(VisitStatus.NEW)
                 .grossValue(doctor.getPrice())
                 .payment(payment)
+                .userId(userId)
                 .build();
     }
 

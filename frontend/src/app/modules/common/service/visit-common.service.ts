@@ -11,6 +11,6 @@ export class CartCommonService {
   constructor(private http: HttpClient) { }
 
   getCart(id: number): Observable<VisitSummary> {
-    return this.http.get<VisitSummary>("/api/visits/" + id);
+    return this.http.get<VisitSummary>("/api/booking/" + id);
   }
 }

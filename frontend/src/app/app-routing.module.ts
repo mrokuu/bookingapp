@@ -22,6 +22,8 @@ import { AdminVisitComponent } from './modules/admin/admin-visit/admin-visit.com
 import { FullpageadminemptyComponent } from './layouts/fullpageadminempty/fullpageadminempty.component';
 import { AdminLoginComponent } from './modules/admin/admin-login/admin-login.component';
 import { AdminAuthorizeGuard } from './modules/admin/common/guard/adminAuthorizeGuard';
+import { ProfileComponent } from './modules/profile/profile.component';
+
 
 const routes: Routes = [
   {
@@ -32,6 +34,7 @@ const routes: Routes = [
       {path: 'specializations/:name', component: SpecializationComponent},
       {path: 'selectedDoctor', component: SelectedDoctorComponent},
       {path: 'booking', component: BookingComponent},
+      {path: 'profile', component: ProfileComponent},
     ]
   },
   {
@@ -49,7 +52,7 @@ const routes: Routes = [
       {path: 'admin/specialization/add', component: AdminSpecializationAddComponent, canActivate: [AdminAuthorizeGuard]},
       {path: 'admin/specialization/update/:id', component: AdminSpecializationUpdateComponent, canActivate: [AdminAuthorizeGuard]},
       {path: 'admin/visits', component: AdminVisitComponent, canActivate: [AdminAuthorizeGuard]},
-      {path: 'admin/visits/update/:id', component: AdminVisitUpdateComponent, canActivate: [AdminAuthorizeGuard]},
+      {path: 'admin/visits/update/:id', component: AdminVisitUpdateComponent},
     ]
   },
   {

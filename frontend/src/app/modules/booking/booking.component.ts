@@ -6,6 +6,7 @@ import { InitData } from './model/initData';
 import { ClientDto } from './model/clientDto';
 import { VisitSummary } from './model/visitSummary';
 import { Doctor } from '../admin/common/doctor';
+import { JwtService } from '../common/service/jwt.service';
 
 
 
@@ -23,6 +24,7 @@ export class BookingComponent {
   initData!: InitData;
   visitSummary!: VisitSummary;
   clientDto!: ClientDto;
+  isLoggedIn = false;
 
 
   constructor(
@@ -30,6 +32,7 @@ export class BookingComponent {
     // private cookieService: CookieService,
     private bookingService : BookingService,
     private formBuilder: FormBuilder,
+    private jwtService: JwtService
 
     ) { }
 
@@ -49,6 +52,7 @@ export class BookingComponent {
       this.getId()
       this.getSelectedDoctor()
       this.getinitData();
+      this.isLoggedIn = this.jwtService.isLoggedIn();
     }
 
 
