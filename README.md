@@ -1,4 +1,4 @@
-# bookingapp
+# Bookingapp
 
 App for scheduling doctor appointments.
 
