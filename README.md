@@ -3,7 +3,27 @@
 App for scheduling doctor appointments. A multi-layer architecture was used.
 
 
+#  Features
+
+Non-admin page:
+
+* Login
+* Making an appointment
+* Sending an e-mail after making an appointment
+* Sorting by specialization
+* After logging in, you can view the list of appointments
+
+Admin page:
+
+* Login
+* Editing Doctor, Specialization
+* Adding Doctor, Specialization
+* Deliting Doctor, Specilization
+* Displaying a list of appointments
+
+
 #  Tech stack
+
 * Spring Boot, 
 * Angular, 
 * TypeScript, 
