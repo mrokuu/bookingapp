@@ -32,6 +32,16 @@ Admin page:
 * Swagger
 
 
+### Features and TODO
+
+#### Project
+
+
+- [ ] Implement Logout
+- [ ] Implement Calendar
+- [ ] Implement payment gateway
+
+
 #  Installation
 
 _____
