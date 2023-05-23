@@ -33,10 +33,7 @@ Admin page:
 * Swagger
 
 
-### Features and TODO
-
-#### Project
-
+### TODO
 
 - [ ] Implement Logout
 - [ ] Implement Calendar
