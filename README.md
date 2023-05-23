@@ -3,8 +3,13 @@
 App for scheduling doctor appointments. A multi-layer architecture was used.
 
 
-#  Technologies
-* Spring Boot, Angular, TypeScript, Mysql
+#  Tech stack
+* Spring Boot, 
+* Angular, 
+* TypeScript, 
+* Mysql
+* Liquibase
+* Swagger
 
 
 #  Installation
