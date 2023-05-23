@@ -31,6 +31,7 @@ Admin page:
 * Mysql
 * Liquibase
 * Swagger
+* JWT
 
 
 ### TODO
