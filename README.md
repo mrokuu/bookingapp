@@ -70,7 +70,7 @@ Admin is available:
 #  Photos
 
 ![Screenshot 2023-05-23 at 07 40 20](https://github.com/mrokuu/bookingapp/assets/107129687/dd7116a9-c36f-403c-bbfc-a1eba3ef3d07)
-![Screenshot 2023-05-23 at 07 41 56](https://github.com/mrokuu/bookingapp/assets/107129687/69e4a450-a6fc-484d-947f-e04e01ad92d7)
+![Screenshot 2023-05-30 at 10 29 37](https://github.com/mrokuu/bookingapp/assets/107129687/9238224e-1350-496d-8478-a945b66ccc8b)
 ![Screenshot 2023-05-23 at 07 42 51](https://github.com/mrokuu/bookingapp/assets/107129687/5c386a22-381b-44f0-a1e8-f1b2dc76005c)
 ![Screenshot 2023-05-23 at 07 43 55](https://github.com/mrokuu/bookingapp/assets/107129687/1a189574-8d78-4de1-a939-5c9214dd2c73)
 ![Screenshot 2023-05-23 at 07 45 09](https://github.com/mrokuu/bookingapp/assets/107129687/0873fb7e-dfbd-4123-bdea-9b88fe9d11c0)
