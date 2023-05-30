@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, signal } from '@angular/core';
 import { CalendarOptions, DateSelectArg, EventApi, EventClickArg, EventInput } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -16,9 +16,8 @@ import { CalendarService } from './calendar.service';
   styleUrls: ['./calendar.component.scss']
 })
 export class CalendarComponent {
-
-  calendarVisible = true;
-  calendarOptions: CalendarOptions = {
+  calendarVisible = signal(true);
+  calendarOptions = signal<CalendarOptions>({
     plugins: [
       interactionPlugin,
       dayGridPlugin,
@@ -45,20 +44,20 @@ export class CalendarComponent {
     eventChange:
     eventRemove:
     */
-  };
-  currentEvents: EventApi[] = [];
+  });
+  currentEvents = signal<EventApi[]>([]);
 
-  constructor(private changeDetector: ChangeDetectorRef,
-    private calendarService : CalendarService) {
+  constructor(private changeDetector: ChangeDetectorRef) {
   }
 
   handleCalendarToggle() {
-    this.calendarVisible = !this.calendarVisible;
+    this.calendarVisible.update((bool) => !bool);
   }
 
   handleWeekendsToggle() {
-    const { calendarOptions } = this;
-    calendarOptions.weekends = !calendarOptions.weekends;
+    this.calendarOptions.mutate((options) => {
+      options.weekends = !options.weekends;
+    });
   }
 
   handleDateSelect(selectInfo: DateSelectArg) {
@@ -85,8 +84,7 @@ export class CalendarComponent {
   }
 
   handleEvents(events: EventApi[]) {
-    this.currentEvents = events;
-    this.changeDetector.detectChanges();
+    this.currentEvents.set(events);
+    this.changeDetector.detectChanges(); 
   }
-
 }
