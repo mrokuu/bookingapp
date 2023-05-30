@@ -13,6 +13,8 @@ import { BookingComponent } from 'src/app/modules/booking/booking.component';
 import { SelectedDoctorComponent } from 'src/app/modules/selected-doctor/selected-doctor.component';
 import { ReplacePipe } from 'src/app/modules/admin/common/pipe/preplacePipe';
 import { ProfileComponent } from 'src/app/modules/profile/profile.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CalendarComponent } from 'src/app/modules/calendar/calendar.component';
 
 
 
@@ -26,14 +28,17 @@ import { ProfileComponent } from 'src/app/modules/profile/profile.component';
     BookingComponent,
     SelectedDoctorComponent,
     ReplacePipe,
-    ProfileComponent
+    ProfileComponent,
+    CalendarComponent
+
   ],
   imports: [
     CommonModule,
     RouterModule,
     FlexLayoutModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FullCalendarModule
   ]
 })
 export class DefaultModule { }

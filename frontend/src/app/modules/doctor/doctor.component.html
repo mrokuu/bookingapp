@@ -1,6 +1,6 @@
 <mat-card *ngFor="let doctor of page?.content">
-    <div flexLayout="row">
-        <div flexLayout="column" fxFlex>
+    <div flexLayout="row"class="help">
+        <div flexLayout="column" fxFlex >
             <mat-card-title><a routerLink="{{'/doctors/'+ doctor.id}}">{{doctor.name}}</a></mat-card-title>
             <mat-card-subtitle>{{doctor.specialization}}</mat-card-subtitle>
             <div flexLayout="row">
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div>
-            <div class="doctorPrice">{{doctor.price}} </div>
+            <div class="doctorPrice">{{doctor.price}} $</div>
         </div>
     </div>
     <mat-card-actions align="end" fxLayoutGap="10">

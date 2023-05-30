@@ -14,7 +14,8 @@ import { LostPasswordComponent } from 'src/app/modules/login/lost-password/lost-
   declarations: [
     FullpageComponent,
     LoginComponent,
-    LostPasswordComponent
+    LostPasswordComponent,
+    
   ],
   imports: [
     CommonModule,

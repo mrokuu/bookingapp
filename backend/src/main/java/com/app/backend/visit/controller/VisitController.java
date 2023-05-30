@@ -29,12 +29,21 @@ public class VisitController {
     }
 
     @GetMapping("/visits")
-    public List<Visit> getVisits(@AuthenticationPrincipal Long userId){
+    public List<Visit> getVisits(@AuthenticationPrincipal Long userId) throws IllegalAccessException {
+
+        if (userId == null){
+            throw new IllegalAccessException("Lack of userId");
+        }
+
         return visitService.getVistis(userId);
     }
 
     @PostMapping("/booking/{id}")
-    public VisitSummary bookVisit(@RequestBody VisitDto visitDto, @AuthenticationPrincipal Long userId){
+    public VisitSummary bookVisit(@RequestBody VisitDto visitDto, @AuthenticationPrincipal Long userId) throws IllegalAccessException {
+
+        if (userId == null){
+            throw new IllegalAccessException("Lack of userId");
+        }
         return visitService.bookVisit(visitDto, userId);
     }
 
