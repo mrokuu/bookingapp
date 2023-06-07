@@ -1,6 +1,6 @@
 # Bookingapp
 
-App for scheduling doctor appointments. A multi-layer architecture was used.
+App for scheduling doctor appointments.
 
 
 #  Features
